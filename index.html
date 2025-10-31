@@ -463,9 +463,15 @@
                     <!-- Legenda -->
                     <div class="mt-6 pt-4 border-t border-gray-100">
                         <h3 class="text-lg font-semibold mb-2 text-gray-700">Legenda:</h3>
-                        <div class="flex items-center">
+                        <div class="flex items-center mb-2">
                             <div class="w-5 h-5 bg-rose-300 rounded-full mr-2 border border-rose-400"></div>
                             <span class="text-gray-600">Dias de Menstruação</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 bg-rose-100 rounded-full mr-2 border border-rose-200"
+                                style="background-image: linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent); background-size: 8px 8px;">
+                            </div>
+                            <span class="text-gray-600">Previsão de Menstruação</span>
                         </div>
                     </div>
                 </div>
@@ -482,84 +488,29 @@
             </header>
             <main class="space-y-8">
 
-                <!-- Caixa de Nova Postagem (Simulação) -->
+                <!-- Caixa de Nova Postagem (Funcional) -->
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
                     <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
                         <i data-lucide="message-square-plus" class="w-6 h-6 mr-3 text-violet-600"></i>
                         Iniciar uma nova conversa
                     </h2>
-                    <textarea
+                    <textarea id="post-textarea"
                         class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
                         rows="3" placeholder="Escreva sua dúvida anônima ou compartilhe sua experiência..."></textarea>
-                    <button
+                    <button id="post-btn"
                         class="mt-4 w-full bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
                         <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                        Postar (Simulação)
+                        Postar
                     </button>
-                    <p class="text-xs text-gray-500 mt-2 text-center">As postagens são estáticas para esta simulação.
+                    <p class="text-xs text-gray-500 mt-2 text-center">Suas postagens ficam salvas no seu dispositivo.
                     </p>
                 </div>
 
-                <!-- Feed de Tópicos Recentes (Simulação) -->
-                <div class="space-y-6">
+                <!-- Feed de Tópicos Recentes (Dinâmico) -->
+                <!-- O JS vai popular este container -->
+                <div id="community-feed-wrapper" class="space-y-6">
                     <h2 class="text-3xl font-bold text-gray-800">Tópicos Recentes</h2>
-
-                    <!-- Post 1 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="user-circle-2" class="w-10 h-10 text-rose-500"></i>
-                            <div>
-                                <h3 class="font-bold text-gray-800">MeninaLua</h3>
-                                <p class="text-xs text-gray-500">Postado 2 horas atrás</p>
-                            </div>
-                        </div>
-                        <h4 class="text-xl font-semibold text-violet-700 mb-2">É normal sentir tanta cólica no primeiro
-                            dia?</h4>
-                        <p class="text-gray-600 mb-4">Gente, sério, meu primeiro dia é sempre muito difícil, mal consigo
-                            levantar. Mais alguém passa por isso? O que vocês fazem?</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
-                            5 Respostas
-                        </div>
-                    </div>
-
-                    <!-- Post 2 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="user-circle-2" class="w-10 h-10 text-emerald-500"></i>
-                            <div>
-                                <h3 class="font-bold text-gray-800">CicloConsciente</h3>
-                                <p class="text-xs text-gray-500">Postado 8 horas atrás</p>
-                            </div>
-                        </div>
-                        <h4 class="text-xl font-semibold text-violet-700 mb-2">Dica sobre o eco-absorvente de pano!</h4>
-                        <p class="text-gray-600 mb-4">Para quem estava com medo de testar: eu comecei a usar o de pano
-                            no mês passado e foi a melhor decisão! Muito mais confortável...</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
-                            12 Respostas
-                        </div>
-                    </div>
-
-                    <!-- Post 3 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="user-circle-2" class="w-10 h-10 text-sky-500"></i>
-                            <div>
-                                <h3 class="font-bold text-gray-800">Ana_PrimeiroCiclo</h3>
-                                <p class="text-xs text-gray-500">Postado 1 dia atrás</p>
-                            </div>
-                        </div>
-                        <h4 class="text-xl font-semibold text-violet-700 mb-2">Minha menstruação atrasou, devo me
-                            preocupar?</h4>
-                        <p class="text-gray-600 mb-4">Minha primeira menstruação veio há 3 meses, e agora ela está
-                            atrasada 10 dias. Isso é normal no começo? (Não sou sexualmente ativa).</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
-                            8 Respostas
-                        </div>
-                    </div>
-
+                    <!-- Posts estáticos removidos. Serão gerados por JS -->
                 </div>
             </main>
         </div>
@@ -585,9 +536,12 @@
                         <input type="text" id="nickname" value="Visitante"
                             class="w-full text-2xl font-bold text-gray-800 border-b-2 border-transparent focus:border-violet-500 outline-none transition-colors bg-transparent">
                     </div>
-                    <button class="p-2 rounded-full hover:bg-violet-100 text-violet-600" aria-label="Salvar apelido">
+                    <button id="save-nickname-btn" class="p-2 rounded-full hover:bg-violet-100 text-violet-600"
+                        aria-label="Salvar apelido">
                         <i data-lucide="save" class="w-5 h-5"></i>
                     </button>
+                    <span id="save-nickname-feedback"
+                        class="text-sm text-green-600 font-medium opacity-0 transition-opacity duration-300">Salvo!</span>
                 </div>
 
                 <!-- Card de Configurações do Ciclo -->
@@ -613,12 +567,45 @@
                             <input type="number" id="period-length" value="5"
                                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500">
                         </div>
-                        <button
-                            class="w-full bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
-                            <i data-lucide="save" class="w-5 h-5 mr-2"></i>
-                            Salvar Configurações do Ciclo
-                        </button>
+                        <div class="flex items-center">
+                            <button id="save-config-btn"
+                                class="bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
+                                <i data-lucide="save" class="w-5 h-5 mr-2"></i>
+                                Salvar Configurações do Ciclo
+                            </button>
+                            <span id="save-config-feedback"
+                                class="ml-4 text-sm text-green-600 font-medium opacity-0 transition-opacity duration-300">Salvo!</span>
+                        </div>
+
                     </div>
+                </div>
+
+                <!-- NOVO: Card de Gerenciamento de Dados -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i data-lucide="archive" class="w-6 h-6 mr-3 text-violet-600"></i>
+                        Gerenciamento de Dados
+                    </h2>
+                    <p class="text-sm text-gray-600 mb-6">Salve uma cópia de segurança dos seus dados (apelido,
+                        configurações, datas do ciclo e posts) ou restaure um backup. Seus dados são salvos apenas neste
+                        navegador.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button id="export-data-btn"
+                            class="flex-1 bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
+                            <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                            Exportar Meus Dados
+                        </button>
+
+                        <label for="import-file-input"
+                            class="flex-1 bg-gray-100 text-gray-800 font-bold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center cursor-pointer">
+                            <i data-lucide="upload" class="w-5 h-5 mr-2"></i>
+                            Importar Dados
+                        </label>
+                        <input type="file" id="import-file-input" class="hidden" accept=".json">
+
+                    </div>
+                    <span id="import-feedback"
+                        class="mt-4 text-sm text-green-600 font-medium opacity-0 transition-opacity duration-300 block text-center"></span>
                 </div>
 
                 <!-- Card de Preferências e Outros -->
@@ -840,6 +827,450 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
+            // --- CHAVES E DADOS DO LOCALSTORAGE ---
+            const STORAGE_KEY_CONFIG = 'cicloConfig';
+            const STORAGE_KEY_DATES = 'cicloSelectedDates';
+            const STORAGE_KEY_POSTS = 'cicloCommunityPosts';
+            const STORAGE_KEY_NICKNAME = 'cicloNickname';
+
+            // Carrega dados do localStorage ou usa valores padrão
+            let cicloConfig = JSON.parse(localStorage.getItem(STORAGE_KEY_CONFIG)) || {
+                cycleLength: 28,
+                periodLength: 5
+            };
+            let selectedDates = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY_DATES)) || []);
+            let userNickname = localStorage.getItem(STORAGE_KEY_NICKNAME) || 'Visitante';
+
+            // Posts de fallback (usados se o localStorage estiver vazio)
+            const fallbackPosts = [
+                {
+                    id: 1,
+                    author: 'MeninaLua',
+                    avatarColor: 'text-rose-500',
+                    timestamp: '2 horas atrás',
+                    title: 'É normal sentir tanta cólica no primeiro dia?',
+                    body: 'Gente, sério, meu primeiro dia é sempre muito difícil, mal consigo levantar. Mais alguém passa por isso? O que vocês fazem?',
+                    replies: 5
+                },
+                {
+                    id: 2,
+                    author: 'CicloConsciente',
+                    avatarColor: 'text-emerald-500',
+                    timestamp: '8 horas atrás',
+                    title: 'Dica sobre o eco-absorvente de pano!',
+                    body: 'Para quem estava com medo de testar: eu comecei a usar o de pano no mês passado e foi a melhor decisão! Muito mais confortável...',
+                    replies: 12
+                },
+                {
+                    id: 3,
+                    author: 'Ana_PrimeiroCiclo',
+                    avatarColor: 'text-sky-500',
+                    timestamp: '1 dia atrás',
+                    title: 'Minha menstruação atrasou, devo me preocupar?',
+                    body: 'Minha primeira menstruação veio há 3 meses, e agora ela está atrasada 10 dias. Isso é normal no começo? (Não sou sexualmente ativa).',
+                    replies: 8
+                }
+            ];
+            let communityPosts = JSON.parse(localStorage.getItem(STORAGE_KEY_POSTS)) || fallbackPosts;
+
+            // --- FUNÇÃO HELPER PARA FEEDBACK ---
+            function showFeedback(element, message) {
+                if (element) {
+                    element.textContent = message;
+                    element.classList.remove('opacity-0');
+                    setTimeout(() => {
+                        element.classList.add('opacity-0');
+                    }, 2000);
+                }
+            }
+
+
+            // --- LÓGICA DE PERFIL (page-perfil) ---
+            const nicknameInput = document.getElementById('nickname');
+            const saveNicknameBtn = document.getElementById('save-nickname-btn');
+            const nicknameFeedback = document.getElementById('save-nickname-feedback');
+
+            const cycleLengthInput = document.getElementById('cycle-length');
+            const periodLengthInput = document.getElementById('period-length');
+            const saveConfigBtn = document.getElementById('save-config-btn');
+            const configFeedback = document.getElementById('save-config-feedback');
+
+            // --- NOVO: Elementos de Import/Export ---
+            const exportBtn = document.getElementById('export-data-btn');
+            const importInput = document.getElementById('import-file-input');
+            const importFeedback = document.getElementById('import-feedback');
+
+            // Popular campos ao carregar
+            if (nicknameInput) nicknameInput.value = userNickname;
+            if (cycleLengthInput) cycleLengthInput.value = cicloConfig.cycleLength;
+            if (periodLengthInput) periodLengthInput.value = cicloConfig.periodLength;
+
+            // Salvar Nickname
+            if (saveNicknameBtn) {
+                saveNicknameBtn.addEventListener('click', () => {
+                    userNickname = nicknameInput.value.trim() || 'Visitante';
+                    localStorage.setItem(STORAGE_KEY_NICKNAME, userNickname);
+                    nicknameInput.value = userNickname;
+                    showFeedback(nicknameFeedback, 'Salvo!');
+                });
+            }
+
+            // Salvar Config do Ciclo
+            if (saveConfigBtn) {
+                saveConfigBtn.addEventListener('click', () => {
+                    cicloConfig.cycleLength = parseInt(cycleLengthInput.value) || 28;
+                    cicloConfig.periodLength = parseInt(periodLengthInput.value) || 5;
+                    localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(cicloConfig));
+                    showFeedback(configFeedback, 'Salvo!');
+
+                    // Re-renderizar o calendário com novas previsões, se ele estiver visível
+                    if (window.renderCalendar) {
+                        const calPage = document.getElementById('page-calendario');
+                        if (!calPage.classList.contains('hidden')) {
+                            let currentDate = new Date(); // Re-cria a data atual para resetar
+                            window.renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+                        }
+                    }
+                });
+            }
+
+            // --- NOVO: Lógica de Exportação ---
+            if (exportBtn) {
+                exportBtn.addEventListener('click', () => {
+                    try {
+                        const backupData = {
+                            nickname: localStorage.getItem(STORAGE_KEY_NICKNAME) || 'Visitante',
+                            config: localStorage.getItem(STORAGE_KEY_CONFIG) || JSON.stringify({ cycleLength: 28, periodLength: 5 }),
+                            dates: localStorage.getItem(STORAGE_KEY_DATES) || '[]',
+                            posts: localStorage.getItem(STORAGE_KEY_POSTS) || JSON.stringify(fallbackPosts)
+                        };
+
+                        const jsonString = JSON.stringify(backupData, null, 2);
+                        const blob = new Blob([jsonString], { type: 'application/json' });
+                        const url = URL.createObjectURL(blob);
+
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `meu_ciclo_backup_${new Date().toISOString().split('T')[0]}.json`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+
+                        showFeedback(importFeedback, 'Dados exportados com sucesso!');
+                        importFeedback.classList.remove('text-red-600');
+                        importFeedback.classList.add('text-green-600');
+
+                    } catch (error) {
+                        console.error('Erro ao exportar dados:', error);
+                        showFeedback(importFeedback, 'Erro ao exportar dados.');
+                        importFeedback.classList.remove('text-green-600');
+                        importFeedback.classList.add('text-red-600');
+                    }
+                });
+            }
+
+            // --- NOVO: Lógica de Importação ---
+            if (importInput) {
+                importInput.addEventListener('change', (event) => {
+                    const file = event.target.files[0];
+                    if (!file) {
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const text = e.target.result;
+                            const backupData = JSON.parse(text);
+
+                            // Validação básica
+                            if (backupData.nickname && backupData.config && backupData.dates && backupData.posts) {
+                                // Salva os dados brutos. O app já sabe como ler esses JSONs na inicialização.
+                                localStorage.setItem(STORAGE_KEY_NICKNAME, backupData.nickname);
+                                localStorage.setItem(STORAGE_KEY_CONFIG, backupData.config);
+                                localStorage.setItem(STORAGE_KEY_DATES, backupData.dates);
+                                localStorage.setItem(STORAGE_KEY_POSTS, backupData.posts);
+
+                                // Mostra feedback e recarrega
+                                showFeedback(importFeedback, 'Sucesso! Recarregando app...');
+                                importFeedback.classList.remove('text-red-600');
+                                importFeedback.classList.add('text-green-600');
+
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 2000);
+
+                            } else {
+                                throw new Error('Arquivo de backup inválido ou corrompido.');
+                            }
+                        } catch (error) {
+                            console.error('Erro ao importar dados:', error);
+                            showFeedback(importFeedback, `Erro: ${error.message}`);
+                            importFeedback.classList.remove('text-green-600');
+                            importFeedback.classList.add('text-red-600');
+                        } finally {
+                            // Limpa o input para permitir o re-upload do mesmo arquivo
+                            event.target.value = null;
+                        }
+                    };
+                    reader.readAsText(file);
+                });
+            }
+
+
+            // --- LÓGICA DA COMUNIDADE (page-comunidade) ---
+            const postTextarea = document.getElementById('post-textarea');
+            const postBtn = document.getElementById('post-btn');
+            const feedWrapper = document.getElementById('community-feed-wrapper');
+
+            function createPostHTML(post) {
+                // Função para escapar HTML e evitar XSS básico
+                const escapeHTML = (str) => {
+                    if (typeof str !== 'string') return '';
+                    return str.replace(/[&<>"']/g, (match) => ({
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        '"': '&quot;',
+                        "'": '&#39;'
+                    }[match]));
+                }
+
+                const safeTitle = escapeHTML(post.title);
+                // Preserva quebras de linha e escapa HTML
+                const safeBody = escapeHTML(post.body).replace(/\n/g, '<br>');
+
+                return `
+                <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="user-circle-2" class="w-10 h-10 ${escapeHTML(post.avatarColor) || 'text-gray-500'}"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-800">${escapeHTML(post.author)}</h3>
+                            <p class="text-xs text-gray-500">Postado ${escapeHTML(post.timestamp)}</p>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-violet-700 mb-2">${safeTitle}</h4>
+                    <p class="text-gray-600 mb-4 break-words">${safeBody}</p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
+                        ${escapeHTML(String(post.replies))} Respostas
+                    </div>
+                </div>
+                `;
+            }
+
+            function renderCommunityPosts() {
+                if (!feedWrapper) return;
+
+                // Encontra o H2 (Título) para preservá-lo
+                const titleElement = feedWrapper.querySelector('h2');
+
+                // Limpa apenas os posts antigos
+                feedWrapper.innerHTML = '';
+                if (titleElement) {
+                    feedWrapper.appendChild(titleElement); // Readiciona o título
+                }
+
+                // Adiciona os posts
+                if (communityPosts.length === 0) {
+                    const noPostsEl = document.createElement('p');
+                    noPostsEl.className = 'text-gray-500 text-center';
+                    noPostsEl.textContent = 'Ainda não há posts. Seja a primeira a compartilhar!';
+                    feedWrapper.appendChild(noPostsEl);
+                } else {
+                    communityPosts.forEach(post => {
+                        // Usamos insertAdjacentHTML para renderizar o HTML
+                        feedWrapper.insertAdjacentHTML('beforeend', createPostHTML(post));
+                    });
+                }
+                // Re-cria os ícones do Lucide
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+            }
+
+            // Postar
+            if (postBtn) {
+                postBtn.addEventListener('click', () => {
+                    const text = postTextarea.value.trim();
+                    if (text) {
+                        const newPost = {
+                            id: Date.now(),
+                            author: userNickname, // Usa o nickname salvo
+                            avatarColor: 'text-violet-500', // Cor para novos posts
+                            timestamp: 'Agora mesmo',
+                            title: text.substring(0, 50) + (text.length > 50 ? '...' : ''),
+                            body: text,
+                            replies: 0
+                        };
+
+                        communityPosts.unshift(newPost); // Adiciona no início
+                        localStorage.setItem(STORAGE_KEY_POSTS, JSON.stringify(communityPosts));
+                        renderCommunityPosts();
+                        postTextarea.value = '';
+                    }
+                });
+            }
+
+
+            // --- LÓGICA DO CALENDÁRIO (para a página "Calendário") ---
+            const monthYearEl = document.getElementById('month-year');
+            const gridEl = document.getElementById('calendar-grid');
+            const prevBtn = document.getElementById('prev-month');
+            const nextBtn = document.getElementById('next-month');
+            let currentDateForCalendar = new Date(); // Variável para controlar o mês/ano do calendário
+
+            // Verifica se os elementos do calendário existem antes de adicionar listeners
+            if (monthYearEl && gridEl && prevBtn && nextBtn) {
+                const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+                // Função para adicionar dias a uma data
+                function addDays(date, days) {
+                    const result = new Date(date);
+                    result.setDate(result.getDate() + days);
+                    return result;
+                }
+
+                // Função para formatar data como YYYY-MM-DD
+                function formatDate(date) {
+                    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+                }
+
+                // Função para calcular previsões
+                function getPredictions() {
+                    if (selectedDates.size === 0) {
+                        return { nextPeriod: [], fertileWindow: [] };
+                    }
+
+                    // Converte o Set para Array e ordena
+                    const sortedDates = Array.from(selectedDates).sort((a, b) => new Date(a) - new Date(b));
+
+                    // Agrupa datas consecutivas para encontrar o início de cada ciclo
+                    let cyclesStartDates = [];
+                    if (sortedDates.length > 0) {
+                        cyclesStartDates.push(new Date(sortedDates[0])); // Adiciona o primeiro dia
+
+                        for (let i = 1; i < sortedDates.length; i++) {
+                            let prevDate = new Date(sortedDates[i - 1]);
+                            let currDate = new Date(sortedDates[i]);
+                            let diffTime = currDate.getTime() - prevDate.getTime();
+                            let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+                            // Se a diferença for maior que (ex: 15 dias), consideramos um novo ciclo
+                            if (diffDays > 15) {
+                                cyclesStartDates.push(currDate);
+                            }
+                        }
+                    }
+
+                    if (cyclesStartDates.length === 0) {
+                        return { nextPeriod: [], fertileWindow: [] }; // Não há dados suficientes
+                    }
+
+                    // Pega o início do último ciclo registrado
+                    const lastCycleStartDate = cyclesStartDates[cyclesStartDates.length - 1];
+
+                    const { cycleLength, periodLength } = cicloConfig; // Pega config salva
+
+                    // Calcula o início da próxima menstruação
+                    const nextPeriodStartDate = addDays(lastCycleStartDate, cycleLength);
+
+                    const predictions = {
+                        nextPeriod: [],
+                        fertileWindow: [] // Não implementado para simplificar
+                    };
+
+                    // Adiciona os dias da previsão da menstruação
+                    for (let i = 0; i < periodLength; i++) {
+                        predictions.nextPeriod.push(formatDate(addDays(nextPeriodStartDate, i)));
+                    }
+
+                    return predictions;
+                }
+
+                // Tornar a função de renderização global para ser chamada pelo botão Salvar
+                window.renderCalendar = function (year, month) {
+                    if (!gridEl || !monthYearEl) return;
+
+                    // Limpa o grid
+                    gridEl.innerHTML = '';
+
+                    // Define o cabeçalho com Mês/Ano
+                    monthYearEl.textContent = `${monthNames[month]} ${year}`;
+
+                    // Pega as previsões
+                    const predictions = getPredictions();
+
+                    // Pega o primeiro dia da semana (0=Domingo, 1=Segunda, ...)
+                    let firstDayOfWeek = new Date(year, month, 1).getDay();
+                    // Pega o total de dias no mês
+                    let totalDaysInMonth = new Date(year, month + 1, 0).getDate();
+
+                    // 1. Adiciona células vazias
+                    for (let i = 0; i < firstDayOfWeek; i++) {
+                        gridEl.appendChild(document.createElement('div'));
+                    }
+
+                    // 2. Adiciona as células dos dias
+                    let today = new Date();
+                    for (let day = 1; day <= totalDaysInMonth; day++) {
+                        const dayEl = document.createElement('div');
+                        const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+                        dayEl.textContent = day;
+                        dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-violet-100 transition-colors duration-150';
+
+                        // Marca o dia atual (hoje)
+                        const isToday = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+                        if (isToday) {
+                            dayEl.classList.add('bg-violet-100', 'text-violet-700', 'font-bold');
+                        }
+
+                        // Estiliza com base na seleção ou previsão
+                        if (selectedDates.has(dateString)) {
+                            // Dia de menstruação (marcado pelo usuário)
+                            dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-rose-300 text-rose-800 font-bold';
+                        } else if (predictions.nextPeriod.includes(dateString)) {
+                            // Dia de previsão
+                            dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-rose-100 text-rose-500 border border-rose-200';
+                            dayEl.style.backgroundImage = 'linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent)';
+                            dayEl.style.backgroundSize = '8px 8px';
+                        }
+
+                        // Adiciona evento de clique para selecionar/desselecionar
+                        dayEl.addEventListener('click', () => {
+                            if (selectedDates.has(dateString)) {
+                                selectedDates.delete(dateString);
+                            } else {
+                                selectedDates.add(dateString);
+                            }
+                            // Salva no localStorage
+                            localStorage.setItem(STORAGE_KEY_DATES, JSON.stringify(Array.from(selectedDates)));
+                            // Re-renderiza o calendário para atualizar cores e previsões
+                            window.renderCalendar(year, month);
+                        });
+
+                        gridEl.appendChild(dayEl);
+                    }
+                }
+
+                // Botão Mês Anterior
+                prevBtn.addEventListener('click', () => {
+                    currentDateForCalendar.setMonth(currentDateForCalendar.getMonth() - 1);
+                    window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
+                });
+
+                // Botão Próximo Mês
+                nextBtn.addEventListener('click', () => {
+                    currentDateForCalendar.setMonth(currentDateForCalendar.getMonth() + 1);
+                    window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
+                });
+
+                // Renderiza o calendário inicial (será chamado pela navegação)
+            }
+
+
             // --- LÓGICA DE NAVEGAÇÃO DAS PÁGINAS ---
             const navButtons = document.querySelectorAll('.nav-button');
             const pages = document.querySelectorAll('.page-content');
@@ -859,21 +1290,49 @@
 
                     // Atualiza o estado visual dos botões de navegação
                     navButtons.forEach(btn => {
+                        const icon = btn.querySelector('.nav-icon');
+                        const text = btn.querySelector('.nav-text');
                         btn.classList.remove('text-violet-600');
                         btn.classList.add('text-gray-400');
-                        btn.querySelector('.nav-icon').classList.remove('text-violet-600');
-                        btn.querySelector('.nav-icon').classList.add('text-gray-400');
-                        btn.querySelector('.nav-text').classList.remove('text-violet-600');
-                        btn.querySelector('.nav-text').classList.add('text-gray-400');
+                        if (icon) {
+                            icon.classList.remove('text-violet-600');
+                            icon.classList.add('text-gray-400');
+                        }
+                        if (text) {
+                            text.classList.remove('text-violet-600');
+                            text.classList.add('text-gray-400');
+                        }
                     });
 
                     // Ativa o botão clicado
+                    const icon = button.querySelector('.nav-icon');
+                    const text = button.querySelector('.nav-text');
                     button.classList.add('text-violet-600');
                     button.classList.remove('text-gray-400');
-                    button.querySelector('.nav-icon').classList.add('text-violet-600');
-                    button.querySelector('.nav-icon').classList.remove('text-gray-400');
-                    button.querySelector('.nav-text').classList.add('text-violet-600');
-                    button.querySelector('.nav-text').classList.remove('text-gray-400');
+                    if (icon) {
+                        icon.classList.add('text-violet-600');
+                        icon.classList.remove('text-gray-400');
+                    }
+                    if (text) {
+                        text.classList.add('text-violet-600');
+                        text.classList.remove('text-gray-400');
+                    }
+
+                    // --- ATUALIZAÇÕES DINÂMICAS AO TROCAR DE ABA ---
+                    if (targetPageId === 'page-comunidade') {
+                        renderCommunityPosts();
+                    }
+                    if (targetPageId === 'page-calendario' && window.renderCalendar) {
+                        // Renderiza o mês atual ao abrir o calendário
+                        currentDateForCalendar = new Date();
+                        window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
+                    }
+                    if (targetPageId === 'page-perfil') {
+                        // Garante que os dados do perfil estejam atualizados
+                        if (nicknameInput) nicknameInput.value = userNickname;
+                        if (cycleLengthInput) cycleLengthInput.value = cicloConfig.cycleLength;
+                        if (periodLengthInput) periodLengthInput.value = cicloConfig.periodLength;
+                    }
 
                     // Rola a página para o topo ao trocar de aba
                     window.scrollTo(0, 0);
@@ -910,7 +1369,8 @@
                     const icon = toggle.querySelector('.toggle-icon');
 
                     content.classList.toggle('hidden');
-                    toggle.classList.toggle('rounded-b-2xl'); // Arredonda o cabeçalho quando fechado
+                    // Arredonda o cabeçalho quando fechado
+                    toggle.classList.toggle('rounded-b-2xl', content.classList.contains('hidden'));
 
                     if (content.classList.contains('hidden')) {
                         icon.textContent = '＋';
@@ -920,97 +1380,10 @@
                 });
             });
 
-            // --- LÓGICA DO CALENDÁRIO (para a página "Calendário") ---
-            const monthYearEl = document.getElementById('month-year');
-            const gridEl = document.getElementById('calendar-grid');
-            const prevBtn = document.getElementById('prev-month');
-            const nextBtn = document.getElementById('next-month');
-
-            // Verifica se os elementos do calendário existem antes de adicionar listeners
-            if (monthYearEl && gridEl && prevBtn && nextBtn) {
-                let currentDate = new Date();
-                // Usamos um Set para guardar as datas selecionadas no formato "YYYY-MM-DD"
-                let selectedDates = new Set();
-                const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-
-                function renderCalendar(year, month) {
-                    // Limpa o grid
-                    gridEl.innerHTML = '';
-
-                    // Define o cabeçalho com Mês/Ano
-                    monthYearEl.textContent = `${monthNames[month]} ${year}`;
-
-                    // Pega o primeiro dia da semana (0=Domingo, 1=Segunda, ...)
-                    let firstDayOfWeek = new Date(year, month, 1).getDay();
-                    // Pega o total de dias no mês
-                    let totalDaysInMonth = new Date(year, month + 1, 0).getDate();
-
-                    // 1. Adiciona células vazias para o "offset" do início do mês
-                    for (let i = 0; i < firstDayOfWeek; i++) {
-                        gridEl.appendChild(document.createElement('div'));
-                    }
-
-                    // 2. Adiciona as células dos dias
-                    for (let day = 1; day <= totalDaysInMonth; day++) {
-                        const dayEl = document.createElement('div');
-                        const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-
-                        dayEl.textContent = day;
-                        dayEl.classList.add('h-10', 'w-10', 'flex', 'items-center', 'justify-center', 'rounded-full', 'cursor-pointer', 'hover:bg-violet-100', 'transition-colors', 'duration-150');
-
-                        // Marca o dia atual (hoje)
-                        let today = new Date();
-                        if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-                            dayEl.classList.add('bg-violet-100', 'text-violet-700', 'font-bold');
-                        }
-
-                        // Destaca se o dia estiver selecionado
-                        if (selectedDates.has(dateString)) {
-                            dayEl.classList.add('bg-rose-300', 'text-rose-800', 'font-bold');
-                            dayEl.classList.remove('bg-violet-100', 'text-violet-700'); // Remove o destaque de "hoje" se estiver selecionado
-                        }
-
-                        // Adiciona evento de clique para selecionar/desselecionar
-                        dayEl.addEventListener('click', () => {
-                            if (selectedDates.has(dateString)) {
-                                selectedDates.delete(dateString);
-                                dayEl.classList.remove('bg-rose-300', 'text-rose-800', 'font-bold');
-                                // Se for hoje, readiciona o estilo de "hoje"
-                                if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-                                    dayEl.classList.add('bg-violet-100', 'text-violet-700');
-                                }
-                            } else {
-                                selectedDates.add(dateString);
-                                dayEl.classList.add('bg-rose-300', 'text-rose-800', 'font-bold');
-                                dayEl.classList.remove('bg-violet-100', 'text-violet-700');
-                            }
-                        });
-
-                        gridEl.appendChild(dayEl);
-                    }
-                }
-
-                // Botão Mês Anterior
-                prevBtn.addEventListener('click', () => {
-                    currentDate.setMonth(currentDate.getMonth() - 1);
-                    renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
-                });
-
-                // Botão Próximo Mês
-                nextBtn.addEventListener('click', () => {
-                    currentDate.setMonth(currentDate.getMonth() + 1);
-                    renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
-                });
-
-                // Renderiza o calendário inicial
-                renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
-            }
-
             // --- INICIALIZA LUCIDE ICONS ---
-            // Esta função deve ser chamada depois que todo o HTML foi carregado
-            // e também depois de qualquer manipulação de DOM que adicione
-            // novos elementos com `data-lucide`.
-            lucide.createIcons();
+            if (window.lucide) {
+                lucide.createIcons();
+            }
         });
     </script>
 
