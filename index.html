@@ -91,9 +91,10 @@
                     <!-- MÓDULO 1: O CICLO SEM MISTÉRIO -->
                     <div class="shadow-lg rounded-2xl">
                         <!-- Cabeçalho Clicável -->
-                        <div
-                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
-                            <div class="flex items-center">
+                        <button
+                            class="module-toggle w-full bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer"
+                            aria-expanded="false" aria-controls="content-modulo-1" role="button">
+                            <div class="flex items-center text-left">
                                 <span class="text-3xl mr-4">🩸</span>
                                 <div>
                                     <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 1: O CICLO SEM
@@ -102,9 +103,10 @@
                                 </div>
                             </div>
                             <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
-                        </div>
+                        </button>
                         <!-- Conteúdo Oculto -->
-                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                        <div id="content-modulo-1"
+                            class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
                             <!-- Card: O que é o Ciclo? -->
                             <div class="bg-violet-50 p-6 rounded-2xl shadow-inner mb-6">
                                 <h3 class="text-xl font-bold text-violet-600 mb-3">O que é o Ciclo?</h3>
@@ -145,9 +147,10 @@
                     <!-- SINAIS DE ALERTA -->
                     <div class="shadow-lg rounded-2xl">
                         <!-- Cabeçalho Clicável -->
-                        <div
-                            class="module-toggle bg-orange-100 p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
-                            <div class="flex items-center">
+                        <button
+                            class="module-toggle w-full bg-orange-100 p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer"
+                            aria-expanded="false" aria-controls="content-alerta" role="button">
+                            <div class="flex items-center text-left">
                                 <span class="text-3xl mr-4">🚨</span>
                                 <div>
                                     <h2 class="text-xl sm:text-2xl font-bold text-orange-700">Sinais de Alerta</h2>
@@ -155,9 +158,9 @@
                                 </div>
                             </div>
                             <span class="toggle-icon text-3xl font-bold text-orange-700">＋</span>
-                        </div>
+                        </button>
                         <!-- Conteúdo Oculto -->
-                        <div
+                        <div id="content-alerta"
                             class="module-content hidden bg-orange-50 rounded-b-2xl border-t border-orange-200 px-5 sm:px-6">
                             <ul class="list-none space-y-3 text-orange-800">
                                 <li class="flex items-start">
@@ -182,9 +185,10 @@
                     <!-- MÓDULO 2: BEM-ESTAR E EMOÇÕES -->
                     <div class="shadow-lg rounded-2xl">
                         <!-- Cabeçalho Clicável -->
-                        <div
-                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
-                            <div class="flex items-center">
+                        <button
+                            class="module-toggle w-full bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer"
+                            aria-expanded="false" aria-controls="content-modulo-2" role="button">
+                            <div class="flex items-center text-left">
                                 <span class="text-3xl mr-4">💪</span>
                                 <div>
                                     <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 2: BEM-ESTAR E
@@ -194,9 +198,10 @@
                                 </div>
                             </div>
                             <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
-                        </div>
+                        </button>
                         <!-- Conteúdo Oculto -->
-                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                        <div id="content-modulo-2"
+                            class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <!-- Card: Cólicas -->
                                 <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
@@ -255,9 +260,10 @@
                     <!-- MÓDULO 3: CUIDADOS PRÁTICOS E HIGIENE -->
                     <div class="shadow-lg rounded-2xl">
                         <!-- Cabeçalho Clicável -->
-                        <div
-                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
-                            <div class="flex items-center">
+                        <button
+                            class="module-toggle w-full bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer"
+                            aria-expanded="false" aria-controls="content-modulo-3" role="button">
+                            <div class="flex items-center text-left">
                                 <span class="text-3xl mr-4">🧺</span>
                                 <div>
                                     <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 3: CUIDADOS E HIGIENE
@@ -266,9 +272,10 @@
                                 </div>
                             </div>
                             <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
-                        </div>
+                        </button>
                         <!-- Conteúdo Oculto -->
-                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                        <div id="content-modulo-3"
+                            class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
                                     <h3 class="text-xl font-bold text-violet-600 mb-3">Higiene Íntima Correta</h3>
@@ -322,9 +329,10 @@
                     <!-- MÓDULO 4: SEXUALIDADE E PREVENÇÃO -->
                     <div class="shadow-lg rounded-2xl">
                         <!-- Cabeçalho Clicável -->
-                        <div
-                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
-                            <div class="flex items-center">
+                        <button
+                            class="module-toggle w-full bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer"
+                            aria-expanded="false" aria-controls="content-modulo-4" role="button">
+                            <div class="flex items-center text-left">
                                 <span class="text-3xl mr-4">💘</span>
                                 <div>
                                     <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 4: SEXUALIDADE E
@@ -334,9 +342,10 @@
                                 </div>
                             </div>
                             <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
-                        </div>
+                        </button>
                         <!-- Conteúdo Oculto -->
-                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                        <div id="content-modulo-4"
+                            class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
                             <!-- Card: Alerta -->
                             <div class="bg-rose-100 border-l-4 border-rose-500 p-6 rounded-lg shadow-lg mb-6">
                                 <h3 class="text-xl font-bold text-rose-700 mb-3">O Ciclo Não é Contraceptivo! (Alerta)
@@ -369,9 +378,10 @@
                     <!-- MÓDULO 5: ONDE BUSCAR AJUDA -->
                     <div class="shadow-lg rounded-2xl">
                         <!-- Cabeçalho Clicável -->
-                        <div
-                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
-                            <div class="flex items-center">
+                        <button
+                            class="module-toggle w-full bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer"
+                            aria-expanded="false" aria-controls="content-modulo-5" role="button">
+                            <div class="flex items-center text-left">
                                 <span class="text-3xl mr-4">✅</span>
                                 <div>
                                     <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 5: ONDE BUSCAR AJUDA
@@ -380,9 +390,10 @@
                                 </div>
                             </div>
                             <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
-                        </div>
+                        </button>
                         <!-- Conteúdo Oculto -->
-                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                        <div id="content-modulo-5"
+                            class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
                             <div class="bg-emerald-100 border-l-4 border-emerald-500 p-6 rounded-lg shadow-lg">
                                 <h3 class="text-xl font-bold text-emerald-700 mb-4">Não Está Sozinha! Onde Buscar Ajuda?
                                 </h3>
@@ -432,12 +443,14 @@
                 <div id="calendar-container" class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
                     <!-- Cabeçalho do Calendário (Mês/Ano e Botões) -->
                     <div id="calendar-header" class="flex justify-between items-center mb-4">
-                        <button id="prev-month" class="p-2 rounded-full hover:bg-violet-100 text-violet-600">
+                        <button id="prev-month" class="p-2 rounded-full hover:bg-violet-100 text-violet-600"
+                            aria-label="Mês anterior">
                             <!-- Ícone Lucide -->
                             <i data-lucide="chevron-left" class="h-6 w-6"></i>
                         </button>
                         <h2 id="month-year" class="text-xl font-bold text-violet-800"></h2>
-                        <button id="next-month" class="p-2 rounded-full hover:bg-violet-100 text-violet-600">
+                        <button id="next-month" class="p-2 rounded-full hover:bg-violet-100 text-violet-600"
+                            aria-label="Próximo mês">
                             <!-- Ícone Lucide -->
                             <i data-lucide="chevron-right" class="h-6 w-6"></i>
                         </button>
@@ -462,17 +475,28 @@
 
                     <!-- Legenda -->
                     <div class="mt-6 pt-4 border-t border-gray-100">
-                        <h3 class="text-lg font-semibold mb-2 text-gray-700">Legenda:</h3>
-                        <div class="flex items-center mb-2">
-                            <div class="w-5 h-5 bg-rose-300 rounded-full mr-2 border border-rose-400"></div>
-                            <span class="text-gray-600">Dias de Menstruação</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-5 h-5 bg-rose-100 rounded-full mr-2 border border-rose-200"
-                                style="background-image: linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent); background-size: 8px 8px;">
+                        <h3 class="text-lg font-semibold mb-3 text-gray-700">Legenda:</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 bg-rose-300 rounded-full mr-2 border border-rose-400"></div>
+                                <span class="text-gray-600">Dias de Menstruação</span>
                             </div>
-                            <span class="text-gray-600">Previsão de Menstruação</span>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 bg-rose-100 rounded-full mr-2 border border-rose-200"
+                                    style="background-image: linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent); background-size: 8px 8px;">
+                                </div>
+                                <span class="text-gray-600">Previsão de Menstruação</span>
+                            </div>
+                            <!-- NOVA LEGENDA: Período Fértil -->
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 bg-emerald-100 rounded-full mr-2 border border-emerald-200"></div>
+                                <span class="text-gray-600">Previsão de Período Fértil</span>
+                            </div>
                         </div>
+                        <!-- NOVO AVISO -->
+                        <p class="text-xs text-gray-500 mt-4 italic">* As previsões de período fértil e menstruação são
+                            apenas <strong class="font-semibold">estimativas</strong> e <strong
+                                class="font-semibold">NÃO</strong> devem ser usadas como método contraceptivo.</p>
                     </div>
                 </div>
             </main>
@@ -510,10 +534,57 @@
                 <!-- O JS vai popular este container -->
                 <div id="community-feed-wrapper" class="space-y-6">
                     <h2 class="text-3xl font-bold text-gray-800">Tópicos Recentes</h2>
-                    <!-- Posts estáticos removidos. Serão gerados por JS -->
+                    <!-- Posts serão gerados por JS -->
                 </div>
             </main>
         </div>
+
+        <!-- ================================== -->
+        <!-- PÁGINA: DETALHE DO POST (Oculta)  -->
+        <!-- ================================== -->
+        <div id="page-post-detail" class="page-content hidden">
+            <header class="mb-8">
+                <!-- Botão Voltar -->
+                <button data-target="page-comunidade"
+                    class="subpage-trigger mb-4 inline-flex items-center text-violet-600 font-semibold hover:text-violet-800 transition-colors">
+                    <i data-lucide="chevron-left" class="w-5 h-5 mr-1"></i>
+                    Voltar para Comunidade
+                </button>
+            </header>
+            <main class="space-y-8">
+                <!-- Container para o Post Original -->
+                <div id="post-detail-content" class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                    <!-- Post original será injetado aqui pelo JS -->
+                </div>
+
+                <!-- Seção de Respostas -->
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Respostas</h2>
+
+                    <!-- Formulário de Nova Resposta -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i data-lucide="message-square-plus" class="w-5 h-5 mr-3 text-violet-600"></i>
+                            Deixar uma resposta
+                        </h3>
+                        <textarea id="reply-textarea"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+                            rows="3" placeholder="Escreva sua resposta..."></textarea>
+                        <button id="reply-btn"
+                            class="mt-4 w-full bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
+                            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                            Responder
+                        </button>
+                    </div>
+
+                    <!-- Lista de Respostas Anteriores -->
+                    <div id="post-replies-list" class="space-y-6">
+                        <!-- Respostas serão injetadas aqui pelo JS -->
+                    </div>
+                </div>
+            </main>
+        </div>
+
 
         <!-- ====================== -->
         <!-- PÁGINA: PERFIL (Oculta) -->
@@ -556,7 +627,7 @@
                             <label for="cycle-length" class="block text-sm font-medium text-gray-700 mb-1">Duração média
                                 do seu ciclo (dias):</label>
                             <p class="text-xs text-gray-500 mb-2">Conte do 1º dia da menstruação até o dia *anterior* à
-                                próxima.</p>
+                                próxima. (O app tentará calcular a média sozinho se você tiver dados salvos).</p>
                             <input type="number" id="cycle-length" value="28"
                                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500">
                         </div>
@@ -576,11 +647,11 @@
                             <span id="save-config-feedback"
                                 class="ml-4 text-sm text-green-600 font-medium opacity-0 transition-opacity duration-300">Salvo!</span>
                         </div>
-
+                        <p id="avg-cycle-feedback" class="text-sm text-gray-600 italic"></p>
                     </div>
                 </div>
 
-                <!-- NOVO: Card de Gerenciamento de Dados -->
+                <!-- Card de Gerenciamento de Dados -->
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                         <i data-lucide="archive" class="w-6 h-6 mr-3 text-violet-600"></i>
@@ -671,6 +742,7 @@
                     <li>Seu apelido (opcional).</li>
                     <li>As datas do seu ciclo (dias de menstruação).</li>
                     <li>As configurações do seu ciclo (duração média).</li>
+                    <li>Posts e respostas na comunidade (apenas no seu dispositivo).</li>
                 </ul>
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">2. Como usamos seus dados?</h2>
@@ -681,11 +753,12 @@
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">3. Compartilhamento de Dados</h2>
                 <p>Nós <strong class="text-rose-600">nunca</strong> venderemos ou compartilharemos suas informações
-                    pessoais ou dados do seu ciclo com terceiros.</p>
+                    pessoais ou dados do seu ciclo com terceiros. Tudo fica salvo localmente no seu navegador.</p>
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">4. Seus Direitos</h2>
                 <p>Você tem controle total sobre seus dados. Você pode editar ou apagar suas informações a qualquer
-                    momento diretamente no aplicativo.</p>
+                    momento diretamente no aplicativo. Você pode usar a função "Exportar Dados" no Perfil para salvar um
+                    backup.</p>
             </main>
         </div>
 
@@ -714,8 +787,9 @@
                     especialmente nos primeiros anos do ciclo, que pode ser muito irregular.</p>
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">3. Previsões do Calendário</h2>
-                <p>As previsões do calendário são <strong class="text-violet-700">estimativas</strong> baseadas nos
-                    dados que você insere. Elas podem conter erros e não devem, em hipótese alguma, ser usadas como
+                <p>As previsões do calendário (menstruação e período fértil) são <strong
+                        class="text-violet-700">estimativas</strong> baseadas nos dados que você insere e na média dos
+                    seus ciclos anteriores. Elas podem conter erros e não devem, em hipótese alguma, ser usadas como
                     método contraceptivo.</p>
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">4. Uso Responsável</h2>
@@ -753,9 +827,9 @@
                     <h3 class="text-xl font-bold text-violet-700 mb-2">P: O calendário está mostrando previsões
                         estranhas. O que eu faço?</h3>
                     <p><strong>R:</strong> As previsões dependem das informações que você coloca! Vá na aba "Perfil" e
-                        ajuste as "Configurações do Ciclo". Coloque a duração média do seu ciclo (ex: 28 dias) e a
-                        duração média da sua menstruação (ex: 5 dias). Quanto mais você usar e marcar os dias, mais
-                        inteligente o calendário fica.</p>
+                        ajuste as "Configurações do Ciclo". O app tentará usar a média dos seus últimos ciclos
+                        automaticamente, mas ter um valor padrão (ex: 28 dias) ajuda no começo. Quanto mais você usar e
+                        marcar os dias, mais inteligente o calendário fica.</p>
                 </div>
 
                 <!-- FAQ 3 -->
@@ -772,9 +846,9 @@
                     <h3 class="text-xl font-bold text-violet-700 mb-2">P: Posso usar o calendário para saber quando não
                         vou engravidar?</h3>
                     <p><strong class="text-rose-600">R: NÃO! NUNCA!</strong> Como diz o Módulo 4, o corpo adolescente é
-                        muito irregular. As previsões deste app são apenas estimativas para você se organizar e <strong
-                            class="underline">NÃO SERVEM</strong> como método contraceptivo. Converse com um
-                        profissional de saúde sobre isso.</p>
+                        muito irregular. As previsões deste app (incluindo o período fértil) são apenas estimativas para
+                        você se organizar e <strong class="underline">NÃO SERVEM</strong> como método contraceptivo.
+                        Converse com um profissional de saúde sobre isso.</p>
                 </div>
             </main>
         </div>
@@ -789,7 +863,7 @@
         class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-t-lg flex justify-around p-3 sm:p-4 z-50">
         <!-- Botão Início (Ativo por padrão) -->
         <button data-target="page-inicio"
-            class="nav-button flex flex-col items-center justify-center w-1/4 text-violet-600">
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-violet-600" aria-selected="true">
             <!-- Ícone Lucide -->
             <i data-lucide="home" class="nav-icon w-6 h-6 mb-1 text-violet-600"></i>
             <span class="nav-text text-xs sm:text-sm font-medium text-violet-600">Início</span>
@@ -797,7 +871,7 @@
 
         <!-- Botão Calendário -->
         <button data-target="page-calendario"
-            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400">
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400" aria-selected="false">
             <!-- Ícone Lucide -->
             <i data-lucide="calendar" class="nav-icon w-6 h-6 mb-1 text-gray-400"></i>
             <span class="nav-text text-xs sm:text-sm font-medium text-gray-400">Calendário</span>
@@ -805,7 +879,7 @@
 
         <!-- Botão Comunidade -->
         <button data-target="page-comunidade"
-            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400">
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400" aria-selected="false">
             <!-- Ícone Lucide -->
             <i data-lucide="users" class="nav-icon w-6 h-6 mb-1 text-gray-400"></i>
             <span class="nav-text text-xs sm:text-sm font-medium text-gray-400">Comunidade</span>
@@ -813,7 +887,7 @@
 
         <!-- Botão Perfil -->
         <button data-target="page-perfil"
-            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400">
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400" aria-selected="false">
             <!-- Ícone Lucide -->
             <i data-lucide="user" class="nav-icon w-6 h-6 mb-1 text-gray-400"></i>
             <span class="nav-text text-xs sm:text-sm font-medium text-gray-400">Perfil</span>
@@ -842,6 +916,7 @@
             let userNickname = localStorage.getItem(STORAGE_KEY_NICKNAME) || 'Visitante';
 
             // Posts de fallback (usados se o localStorage estiver vazio)
+            // ATUALIZADO: 'replies' agora é um array de objetos
             const fallbackPosts = [
                 {
                     id: 1,
@@ -850,7 +925,10 @@
                     timestamp: '2 horas atrás',
                     title: 'É normal sentir tanta cólica no primeiro dia?',
                     body: 'Gente, sério, meu primeiro dia é sempre muito difícil, mal consigo levantar. Mais alguém passa por isso? O que vocês fazem?',
-                    replies: 5
+                    replies: [
+                        { id: 101, author: 'Visitante', timestamp: '1 hora atrás', body: 'Comigo também é assim! 😥' },
+                        { id: 102, author: 'CicloConsciente', timestamp: '30 min atrás', body: 'Uma bolsa de água quente na barriga ajuda muito a relaxar os músculos. Tenta isso!' }
+                    ]
                 },
                 {
                     id: 2,
@@ -859,7 +937,7 @@
                     timestamp: '8 horas atrás',
                     title: 'Dica sobre o eco-absorvente de pano!',
                     body: 'Para quem estava com medo de testar: eu comecei a usar o de pano no mês passado e foi a melhor decisão! Muito mais confortável...',
-                    replies: 12
+                    replies: []
                 },
                 {
                     id: 3,
@@ -868,7 +946,9 @@
                     timestamp: '1 dia atrás',
                     title: 'Minha menstruação atrasou, devo me preocupar?',
                     body: 'Minha primeira menstruação veio há 3 meses, e agora ela está atrasada 10 dias. Isso é normal no começo? (Não sou sexualmente ativa).',
-                    replies: 8
+                    replies: [
+                        { id: 103, author: 'MeninaLua', timestamp: '20 horas atrás', body: 'Acho que no começo é super normal ser irregular. O meu foi assim também!' }
+                    ]
                 }
             ];
             let communityPosts = JSON.parse(localStorage.getItem(STORAGE_KEY_POSTS)) || fallbackPosts;
@@ -884,6 +964,18 @@
                 }
             }
 
+            // --- FUNÇÃO HELPER PARA ESCAPAR HTML ---
+            function escapeHTML(str) {
+                if (typeof str !== 'string') return '';
+                return str.replace(/[&<>"']/g, (match) => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#39;'
+                }[match]));
+            }
+
 
             // --- LÓGICA DE PERFIL (page-perfil) ---
             const nicknameInput = document.getElementById('nickname');
@@ -894,8 +986,8 @@
             const periodLengthInput = document.getElementById('period-length');
             const saveConfigBtn = document.getElementById('save-config-btn');
             const configFeedback = document.getElementById('save-config-feedback');
+            const avgCycleFeedback = document.getElementById('avg-cycle-feedback');
 
-            // --- NOVO: Elementos de Import/Export ---
             const exportBtn = document.getElementById('export-data-btn');
             const importInput = document.getElementById('import-file-input');
             const importFeedback = document.getElementById('import-feedback');
@@ -923,18 +1015,25 @@
                     localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(cicloConfig));
                     showFeedback(configFeedback, 'Salvo!');
 
-                    // Re-renderizar o calendário com novas previsões, se ele estiver visível
+                    // Re-renderizar o calendário com novas previsões
+                    // Usamos a função global (definida mais abaixo)
                     if (window.renderCalendar) {
-                        const calPage = document.getElementById('page-calendario');
-                        if (!calPage.classList.contains('hidden')) {
-                            let currentDate = new Date(); // Re-cria a data atual para resetar
-                            window.renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+                        let currentDate = new Date();
+                        window.renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+                    }
+                    // Atualiza o feedback da média
+                    if (avgCycleFeedback) {
+                        const calculatedAvg = getAverageCycleLength(); // Pega a média real
+                        if (calculatedAvg.average > 0) {
+                            avgCycleFeedback.textContent = `A média calculada dos seus últimos ${calculatedAvg.count} ciclos é de ${calculatedAvg.average} dias. O app usará esse valor.`;
+                        } else {
+                            avgCycleFeedback.textContent = `Seu valor salvo (${cicloConfig.cycleLength} dias) será usado até você ter mais ciclos registrados.`;
                         }
                     }
                 });
             }
 
-            // --- NOVO: Lógica de Exportação ---
+            // Lógica de Exportação
             if (exportBtn) {
                 exportBtn.addEventListener('click', () => {
                     try {
@@ -970,7 +1069,7 @@
                 });
             }
 
-            // --- NOVO: Lógica de Importação ---
+            // Lógica de Importação
             if (importInput) {
                 importInput.addEventListener('change', (event) => {
                     const file = event.target.files[0];
@@ -984,15 +1083,12 @@
                             const text = e.target.result;
                             const backupData = JSON.parse(text);
 
-                            // Validação básica
                             if (backupData.nickname && backupData.config && backupData.dates && backupData.posts) {
-                                // Salva os dados brutos. O app já sabe como ler esses JSONs na inicialização.
                                 localStorage.setItem(STORAGE_KEY_NICKNAME, backupData.nickname);
                                 localStorage.setItem(STORAGE_KEY_CONFIG, backupData.config);
                                 localStorage.setItem(STORAGE_KEY_DATES, backupData.dates);
                                 localStorage.setItem(STORAGE_KEY_POSTS, backupData.posts);
 
-                                // Mostra feedback e recarrega
                                 showFeedback(importFeedback, 'Sucesso! Recarregando app...');
                                 importFeedback.classList.remove('text-red-600');
                                 importFeedback.classList.add('text-green-600');
@@ -1010,7 +1106,6 @@
                             importFeedback.classList.remove('text-green-600');
                             importFeedback.classList.add('text-red-600');
                         } finally {
-                            // Limpa o input para permitir o re-upload do mesmo arquivo
                             event.target.value = null;
                         }
                     };
@@ -1023,26 +1118,23 @@
             const postTextarea = document.getElementById('post-textarea');
             const postBtn = document.getElementById('post-btn');
             const feedWrapper = document.getElementById('community-feed-wrapper');
+            const postDetailContent = document.getElementById('post-detail-content');
+            const postRepliesList = document.getElementById('post-replies-list');
+            const replyTextarea = document.getElementById('reply-textarea');
+            const replyBtn = document.getElementById('reply-btn');
 
-            function createPostHTML(post) {
-                // Função para escapar HTML e evitar XSS básico
-                const escapeHTML = (str) => {
-                    if (typeof str !== 'string') return '';
-                    return str.replace(/[&<>"']/g, (match) => ({
-                        '&': '&amp;',
-                        '<': '&lt;',
-                        '>': '&gt;',
-                        '"': '&quot;',
-                        "'": '&#39;'
-                    }[match]));
-                }
 
+            function createPostHTML(post, isDetailView = false) {
                 const safeTitle = escapeHTML(post.title);
-                // Preserva quebras de linha e escapa HTML
                 const safeBody = escapeHTML(post.body).replace(/\n/g, '<br>');
+                const replyCount = post.replies ? post.replies.length : 0;
+
+                // Não adiciona classes de clique se for a view de detalhe
+                const cursorClass = isDetailView ? '' : 'cursor-pointer hover:bg-gray-50 post-item-trigger';
+                const postIdAttr = isDetailView ? '' : `data-post-id="${post.id}"`;
 
                 return `
-                <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                <div class="bg-white p-6 rounded-2xl shadow-lg transition-colors ${cursorClass}" ${postIdAttr}>
                     <div class="flex items-center space-x-3 mb-4">
                         <i data-lucide="user-circle-2" class="w-10 h-10 ${escapeHTML(post.avatarColor) || 'text-gray-500'}"></i>
                         <div>
@@ -1054,8 +1146,24 @@
                     <p class="text-gray-600 mb-4 break-words">${safeBody}</p>
                     <div class="flex items-center text-sm text-gray-500">
                         <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
-                        ${escapeHTML(String(post.replies))} Respostas
+                        ${replyCount} ${replyCount === 1 ? 'Resposta' : 'Respostas'}
                     </div>
+                </div>
+                `;
+            }
+
+            function createReplyHTML(reply) {
+                const safeBody = escapeHTML(reply.body).replace(/\n/g, '<br>');
+                return `
+                <div class="bg-gray-50 p-5 rounded-2xl shadow-inner ml-4 sm:ml-8">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <i data-lucide="user-circle" class="w-8 h-8 text-gray-500"></i>
+                        <div>
+                            <h4 class="font-bold text-gray-800">${escapeHTML(reply.author)}</h4>
+                            <p class="text-xs text-gray-500">Respondido ${escapeHTML(reply.timestamp)}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 break-words">${safeBody}</p>
                 </div>
                 `;
             }
@@ -1063,16 +1171,12 @@
             function renderCommunityPosts() {
                 if (!feedWrapper) return;
 
-                // Encontra o H2 (Título) para preservá-lo
                 const titleElement = feedWrapper.querySelector('h2');
-
-                // Limpa apenas os posts antigos
                 feedWrapper.innerHTML = '';
                 if (titleElement) {
-                    feedWrapper.appendChild(titleElement); // Readiciona o título
+                    feedWrapper.appendChild(titleElement);
                 }
 
-                // Adiciona os posts
                 if (communityPosts.length === 0) {
                     const noPostsEl = document.createElement('p');
                     noPostsEl.className = 'text-gray-500 text-center';
@@ -1080,11 +1184,9 @@
                     feedWrapper.appendChild(noPostsEl);
                 } else {
                     communityPosts.forEach(post => {
-                        // Usamos insertAdjacentHTML para renderizar o HTML
-                        feedWrapper.insertAdjacentHTML('beforeend', createPostHTML(post));
+                        feedWrapper.insertAdjacentHTML('beforeend', createPostHTML(post, false));
                     });
                 }
-                // Re-cria os ícones do Lucide
                 if (window.lucide) {
                     lucide.createIcons();
                 }
@@ -1097,15 +1199,15 @@
                     if (text) {
                         const newPost = {
                             id: Date.now(),
-                            author: userNickname, // Usa o nickname salvo
-                            avatarColor: 'text-violet-500', // Cor para novos posts
+                            author: userNickname,
+                            avatarColor: 'text-violet-500',
                             timestamp: 'Agora mesmo',
                             title: text.substring(0, 50) + (text.length > 50 ? '...' : ''),
                             body: text,
-                            replies: 0
+                            replies: [] // Inicia com array vazio
                         };
 
-                        communityPosts.unshift(newPost); // Adiciona no início
+                        communityPosts.unshift(newPost);
                         localStorage.setItem(STORAGE_KEY_POSTS, JSON.stringify(communityPosts));
                         renderCommunityPosts();
                         postTextarea.value = '';
@@ -1113,43 +1215,107 @@
                 });
             }
 
+            // NOVA: Renderiza a página de detalhe do post
+            function renderPostDetail(post) {
+                if (!post || !postDetailContent || !postRepliesList || !replyBtn) return;
 
-            // --- LÓGICA DO CALENDÁRIO (para a página "Calendário") ---
+                // 1. Renderiza o post principal
+                postDetailContent.innerHTML = createPostHTML(post, true); // true = isDetailView
+
+                // 2. Renderiza as respostas
+                postRepliesList.innerHTML = '';
+                if (post.replies && post.replies.length > 0) {
+                    post.replies.forEach(reply => {
+                        postRepliesList.insertAdjacentHTML('beforeend', createReplyHTML(reply));
+                    });
+                } else {
+                    postRepliesList.innerHTML = '<p class="text-gray-500 text-center italic">Nenhuma resposta ainda.</p>';
+                }
+
+                // 3. Atribui o ID do post ao botão de responder
+                replyBtn.dataset.currentPostId = post.id;
+
+                // 4. Limpa o textarea
+                if (replyTextarea) replyTextarea.value = '';
+
+                // 5. Recria ícones
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+            }
+
+            // NOVA: Adiciona listener de clique para responder
+            if (replyBtn) {
+                replyBtn.addEventListener('click', () => {
+                    const text = replyTextarea.value.trim();
+                    const postId = replyBtn.dataset.currentPostId;
+
+                    if (text && postId) {
+                        const newReply = {
+                            id: Date.now(),
+                            author: userNickname,
+                            timestamp: 'Agora mesmo',
+                            body: text
+                        };
+
+                        // Encontra o post e adiciona a resposta
+                        const post = communityPosts.find(p => p.id == postId);
+                        if (post) {
+                            post.replies.unshift(newReply); // Adiciona no início
+                            localStorage.setItem(STORAGE_KEY_POSTS, JSON.stringify(communityPosts));
+
+                            // Re-renderiza a página de detalhe
+                            renderPostDetail(post);
+                        }
+                    }
+                });
+            }
+
+            // NOVA: Listener de clique no feed (Event Delegation)
+            if (feedWrapper) {
+                feedWrapper.addEventListener('click', (e) => {
+                    const postTrigger = e.target.closest('.post-item-trigger');
+                    if (postTrigger) {
+                        const postId = postTrigger.dataset.postId;
+                        const post = communityPosts.find(p => p.id == postId);
+                        if (post) {
+                            renderPostDetail(post);
+                            showPage('page-post-detail');
+                        }
+                    }
+                });
+            }
+
+
+            // --- LÓGICA DO CALENDÁRIO (page-calendario) ---
             const monthYearEl = document.getElementById('month-year');
             const gridEl = document.getElementById('calendar-grid');
             const prevBtn = document.getElementById('prev-month');
             const nextBtn = document.getElementById('next-month');
-            let currentDateForCalendar = new Date(); // Variável para controlar o mês/ano do calendário
+            let currentDateForCalendar = new Date();
 
-            // Verifica se os elementos do calendário existem antes de adicionar listeners
             if (monthYearEl && gridEl && prevBtn && nextBtn) {
                 const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-                // Função para adicionar dias a uma data
                 function addDays(date, days) {
                     const result = new Date(date);
                     result.setDate(result.getDate() + days);
                     return result;
                 }
 
-                // Função para formatar data como YYYY-MM-DD
                 function formatDate(date) {
                     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
                 }
 
-                // Função para calcular previsões
-                function getPredictions() {
-                    if (selectedDates.size === 0) {
-                        return { nextPeriod: [], fertileWindow: [] };
-                    }
+                // NOVA FUNÇÃO: Acha os inícios dos ciclos
+                function getCycleStartDates() {
+                    if (selectedDates.size === 0) return [];
 
-                    // Converte o Set para Array e ordena
                     const sortedDates = Array.from(selectedDates).sort((a, b) => new Date(a) - new Date(b));
 
-                    // Agrupa datas consecutivas para encontrar o início de cada ciclo
                     let cyclesStartDates = [];
                     if (sortedDates.length > 0) {
-                        cyclesStartDates.push(new Date(sortedDates[0])); // Adiciona o primeiro dia
+                        cyclesStartDates.push(new Date(sortedDates[0]));
 
                         for (let i = 1; i < sortedDates.length; i++) {
                             let prevDate = new Date(sortedDates[i - 1]);
@@ -1157,62 +1323,113 @@
                             let diffTime = currDate.getTime() - prevDate.getTime();
                             let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-                            // Se a diferença for maior que (ex: 15 dias), consideramos um novo ciclo
+                            // Se a diferença for maior que 15 dias, consideramos um novo ciclo
+                            // (Ajuste este valor se necessário)
                             if (diffDays > 15) {
                                 cyclesStartDates.push(currDate);
                             }
                         }
                     }
+                    return cyclesStartDates;
+                }
 
+                // NOVA FUNÇÃO: Calcula a média de duração
+                function getAverageCycleLength() {
+                    const cyclesStartDates = getCycleStartDates();
+                    if (cyclesStartDates.length < 2) {
+                        // Não há ciclos completos suficientes para calcular
+                        return { average: 0, count: 0 };
+                    }
+
+                    let cycleLengths = [];
+                    for (let i = 1; i < cyclesStartDates.length; i++) {
+                        let prevCycle = cyclesStartDates[i - 1];
+                        let currCycle = cyclesStartDates[i];
+                        let diffTime = currCycle.getTime() - prevCycle.getTime();
+                        let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                        cycleLengths.push(diffDays);
+                    }
+
+                    if (cycleLengths.length === 0) {
+                        return { average: 0, count: 0 };
+                    }
+
+                    // Pega os últimos 3 ciclos
+                    const lastThreeLengths = cycleLengths.slice(-3);
+                    const sum = lastThreeLengths.reduce((a, b) => a + b, 0);
+                    const average = Math.round(sum / lastThreeLengths.length);
+
+                    return { average: average, count: lastThreeLengths.length };
+                }
+
+
+                // ATUALIZADA: Função para calcular previsões
+                function getPredictions() {
+                    const cyclesStartDates = getCycleStartDates();
                     if (cyclesStartDates.length === 0) {
-                        return { nextPeriod: [], fertileWindow: [] }; // Não há dados suficientes
+                        return { nextPeriod: [], fertileWindow: [] };
                     }
 
                     // Pega o início do último ciclo registrado
                     const lastCycleStartDate = cyclesStartDates[cyclesStartDates.length - 1];
 
-                    const { cycleLength, periodLength } = cicloConfig; // Pega config salva
+                    // Pega a config salva (duração da menstruação)
+                    const { periodLength } = cicloConfig;
 
-                    // Calcula o início da próxima menstruação
-                    const nextPeriodStartDate = addDays(lastCycleStartDate, cycleLength);
+                    // Pega a média calculada ou o valor salvo
+                    const calculatedAvg = getAverageCycleLength();
+                    let effectiveCycleLength;
 
+                    if (calculatedAvg.average > 0) {
+                        effectiveCycleLength = calculatedAvg.average;
+                        // Atualiza o feedback no perfil, se existir
+                        if (avgCycleFeedback) {
+                            avgCycleFeedback.textContent = `A média calculada dos seus últimos ${calculatedAvg.count} ciclos é de ${effectiveCycleLength} dias. O app usará esse valor.`;
+                        }
+                    } else {
+                        effectiveCycleLength = cicloConfig.cycleLength; // Fallback
+                        if (avgCycleFeedback) {
+                            avgCycleFeedback.textContent = `Seu valor salvo (${effectiveCycleLength} dias) será usado até você ter mais ciclos registrados.`;
+                        }
+                    }
+
+                    // 1. Previsão da Próxima Menstruação
+                    const nextPeriodStartDate = addDays(lastCycleStartDate, effectiveCycleLength);
                     const predictions = {
                         nextPeriod: [],
-                        fertileWindow: [] // Não implementado para simplificar
+                        fertileWindow: []
                     };
-
-                    // Adiciona os dias da previsão da menstruação
                     for (let i = 0; i < periodLength; i++) {
                         predictions.nextPeriod.push(formatDate(addDays(nextPeriodStartDate, i)));
+                    }
+
+                    // 2. NOVA: Previsão do Período Fértil
+                    // Estimativa: Ovulação ocorre ~14 dias ANTES da próxima menstruação
+                    const estimatedOvulationDate = addDays(nextPeriodStartDate, -14);
+                    // Janela fértil: 5 dias antes da ovulação + dia da ovulação
+                    for (let i = -5; i <= 0; i++) {
+                        predictions.fertileWindow.push(formatDate(addDays(estimatedOvulationDate, i)));
                     }
 
                     return predictions;
                 }
 
-                // Tornar a função de renderização global para ser chamada pelo botão Salvar
+                // Tornar a função de renderização global
                 window.renderCalendar = function (year, month) {
                     if (!gridEl || !monthYearEl) return;
 
-                    // Limpa o grid
                     gridEl.innerHTML = '';
-
-                    // Define o cabeçalho com Mês/Ano
                     monthYearEl.textContent = `${monthNames[month]} ${year}`;
 
-                    // Pega as previsões
                     const predictions = getPredictions();
 
-                    // Pega o primeiro dia da semana (0=Domingo, 1=Segunda, ...)
                     let firstDayOfWeek = new Date(year, month, 1).getDay();
-                    // Pega o total de dias no mês
                     let totalDaysInMonth = new Date(year, month + 1, 0).getDate();
 
-                    // 1. Adiciona células vazias
                     for (let i = 0; i < firstDayOfWeek; i++) {
                         gridEl.appendChild(document.createElement('div'));
                     }
 
-                    // 2. Adiciona as células dos dias
                     let today = new Date();
                     for (let day = 1; day <= totalDaysInMonth; day++) {
                         const dayEl = document.createElement('div');
@@ -1221,7 +1438,6 @@
                         dayEl.textContent = day;
                         dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-violet-100 transition-colors duration-150';
 
-                        // Marca o dia atual (hoje)
                         const isToday = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
                         if (isToday) {
                             dayEl.classList.add('bg-violet-100', 'text-violet-700', 'font-bold');
@@ -1229,25 +1445,27 @@
 
                         // Estiliza com base na seleção ou previsão
                         if (selectedDates.has(dateString)) {
-                            // Dia de menstruação (marcado pelo usuário)
+                            // Dia de menstruação (marcado)
                             dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-rose-300 text-rose-800 font-bold';
                         } else if (predictions.nextPeriod.includes(dateString)) {
-                            // Dia de previsão
+                            // Dia de previsão de menstruação
                             dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-rose-100 text-rose-500 border border-rose-200';
                             dayEl.style.backgroundImage = 'linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent)';
                             dayEl.style.backgroundSize = '8px 8px';
+                        } else if (predictions.fertileWindow.includes(dateString)) {
+                            // NOVO: Dia de previsão fértil
+                            dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-emerald-100 text-emerald-700 border border-emerald-200';
                         }
 
-                        // Adiciona evento de clique para selecionar/desselecionar
+                        // Adiciona evento de clique
                         dayEl.addEventListener('click', () => {
                             if (selectedDates.has(dateString)) {
                                 selectedDates.delete(dateString);
                             } else {
                                 selectedDates.add(dateString);
                             }
-                            // Salva no localStorage
                             localStorage.setItem(STORAGE_KEY_DATES, JSON.stringify(Array.from(selectedDates)));
-                            // Re-renderiza o calendário para atualizar cores e previsões
+                            // Re-renderiza o calendário para atualizar cores E previsões
                             window.renderCalendar(year, month);
                         });
 
@@ -1255,127 +1473,112 @@
                     }
                 }
 
-                // Botão Mês Anterior
                 prevBtn.addEventListener('click', () => {
                     currentDateForCalendar.setMonth(currentDateForCalendar.getMonth() - 1);
                     window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
                 });
 
-                // Botão Próximo Mês
                 nextBtn.addEventListener('click', () => {
                     currentDateForCalendar.setMonth(currentDateForCalendar.getMonth() + 1);
                     window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
                 });
-
-                // Renderiza o calendário inicial (será chamado pela navegação)
             }
 
 
-            // --- LÓGICA DE NAVEGAÇÃO DAS PÁGINAS ---
+            // --- LÓGICA DE NAVEGAÇÃO GERAL ---
             const navButtons = document.querySelectorAll('.nav-button');
+            const subpageTriggers = document.querySelectorAll('.subpage-trigger');
             const pages = document.querySelectorAll('.page-content');
 
-            navButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetPageId = button.dataset.target;
+            // NOVA: Função reutilizável para mostrar páginas
+            function showPage(targetPageId) {
+                // Esconde todas as páginas
+                pages.forEach(page => page.classList.add('hidden'));
 
-                    // Esconde todas as páginas
-                    pages.forEach(page => page.classList.add('hidden'));
+                // Mostra a página alvo
+                const targetPage = document.getElementById(targetPageId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                }
 
-                    // Mostra a página alvo
-                    const targetPage = document.getElementById(targetPageId);
-                    if (targetPage) {
-                        targetPage.classList.remove('hidden');
-                    }
+                // Atualiza o estado visual APENAS dos botões de navegação principais
+                let isMainPage = false;
+                navButtons.forEach(btn => {
+                    const icon = btn.querySelector('.nav-icon');
+                    const text = btn.querySelector('.nav-text');
+                    const isTarget = btn.dataset.target === targetPageId;
 
-                    // Atualiza o estado visual dos botões de navegação
-                    navButtons.forEach(btn => {
-                        const icon = btn.querySelector('.nav-icon');
-                        const text = btn.querySelector('.nav-text');
-                        btn.classList.remove('text-violet-600');
-                        btn.classList.add('text-gray-400');
-                        if (icon) {
-                            icon.classList.remove('text-violet-600');
-                            icon.classList.add('text-gray-400');
-                        }
-                        if (text) {
-                            text.classList.remove('text-violet-600');
-                            text.classList.add('text-gray-400');
-                        }
-                    });
+                    if (isTarget) isMainPage = true;
 
-                    // Ativa o botão clicado
-                    const icon = button.querySelector('.nav-icon');
-                    const text = button.querySelector('.nav-text');
-                    button.classList.add('text-violet-600');
-                    button.classList.remove('text-gray-400');
+                    // Atualiza A11y
+                    btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+
+                    // Atualiza estilos
+                    btn.classList.toggle('text-violet-600', isTarget);
+                    btn.classList.toggle('text-gray-400', !isTarget);
                     if (icon) {
-                        icon.classList.add('text-violet-600');
-                        icon.classList.remove('text-gray-400');
+                        icon.classList.toggle('text-violet-600', isTarget);
+                        icon.classList.toggle('text-gray-400', !isTarget);
                     }
                     if (text) {
-                        text.classList.add('text-violet-600');
-                        text.classList.remove('text-gray-400');
+                        text.classList.toggle('text-violet-600', isTarget);
+                        text.classList.toggle('text-gray-400', !isTarget);
                     }
+                });
 
-                    // --- ATUALIZAÇÕES DINÂMICAS AO TROCAR DE ABA ---
-                    if (targetPageId === 'page-comunidade') {
-                        renderCommunityPosts();
-                    }
-                    if (targetPageId === 'page-calendario' && window.renderCalendar) {
-                        // Renderiza o mês atual ao abrir o calendário
-                        currentDateForCalendar = new Date();
-                        window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
-                    }
-                    if (targetPageId === 'page-perfil') {
-                        // Garante que os dados do perfil estejam atualizados
-                        if (nicknameInput) nicknameInput.value = userNickname;
-                        if (cycleLengthInput) cycleLengthInput.value = cicloConfig.cycleLength;
-                        if (periodLengthInput) periodLengthInput.value = cicloConfig.periodLength;
-                    }
+                // --- ATUALIZAÇÕES DINÂMICAS AO TROCAR DE ABA ---
+                if (targetPageId === 'page-comunidade') {
+                    renderCommunityPosts();
+                }
+                if (targetPageId === 'page-calendario' && window.renderCalendar) {
+                    currentDateForCalendar = new Date();
+                    window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
+                }
+                if (targetPageId === 'page-perfil') {
+                    if (nicknameInput) nicknameInput.value = userNickname;
+                    if (cycleLengthInput) cycleLengthInput.value = cicloConfig.cycleLength;
+                    if (periodLengthInput) periodLengthInput.value = cicloConfig.periodLength;
+                    // Dispara o cálculo da média ao carregar o perfil
+                    getPredictions();
+                }
 
-                    // Rola a página para o topo ao trocar de aba
-                    window.scrollTo(0, 0);
+                // Rola a página para o topo
+                window.scrollTo(0, 0);
+            }
+
+            // Listener para Navegação Principal
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    showPage(button.dataset.target);
                 });
             });
 
-            // --- LÓGICA DE NAVEGAÇÃO DE SUB-PÁGINAS (Perfil > Links) ---
-            const subpageTriggers = document.querySelectorAll('.subpage-trigger');
-
+            // Listener para Sub-páginas (Termos, Privacidade, etc.)
             subpageTriggers.forEach(button => {
                 button.addEventListener('click', () => {
-                    const targetPageId = button.dataset.target;
-
-                    // Esconde todas as páginas
-                    pages.forEach(page => page.classList.add('hidden'));
-
-                    // Mostra a página alvo
-                    const targetPage = document.getElementById(targetPageId);
-                    if (targetPage) {
-                        targetPage.classList.remove('hidden');
-                    }
-
-                    // Rola a página para o topo
-                    window.scrollTo(0, 0);
-                    // Nota: Esta lógica não mexe no estado visual da nav principal
+                    showPage(button.dataset.target);
                 });
             });
 
-            // --- LÓGICA DO ACORDEÃO (para a página "Início") ---
+
+            // --- LÓGICA DO ACORDEÃO (page-inicio) ---
             const toggles = document.querySelectorAll('.module-toggle');
             toggles.forEach(toggle => {
                 toggle.addEventListener('click', () => {
-                    const content = toggle.nextElementSibling;
+                    const content = document.getElementById(toggle.getAttribute('aria-controls'));
                     const icon = toggle.querySelector('.toggle-icon');
 
-                    content.classList.toggle('hidden');
-                    // Arredonda o cabeçalho quando fechado
-                    toggle.classList.toggle('rounded-b-2xl', content.classList.contains('hidden'));
+                    if (content) {
+                        const isHidden = content.classList.toggle('hidden');
 
-                    if (content.classList.contains('hidden')) {
-                        icon.textContent = '＋';
-                    } else {
-                        icon.textContent = '－';
+                        // Atualiza A11y
+                        toggle.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+
+                        // Arredonda o cabeçalho quando fechado
+                        toggle.classList.toggle('rounded-b-2xl', isHidden);
+
+                        // Atualiza ícone
+                        icon.textContent = isHidden ? '＋' : '－';
                     }
                 });
             });
