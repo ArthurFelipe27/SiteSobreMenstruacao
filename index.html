@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Ciclo, Seu Poder</title>
+    <!-- Importando o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importando a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Importando a biblioteca Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Aplicando a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Estilo para a transição suave do conteúdo do acordeão */
+        .module-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .module-content:not(.hidden) {
+            max-height: 2000px;
+            /* Um valor alto para permitir expansão */
+            padding-top: 1.5rem;
+            /* 24px */
+            padding-bottom: 1.5rem;
+            /* 24px */
+        }
+    </style>
+</head>
+
+<body class="bg-violet-50 text-gray-700 pb-24"> <!-- Padding-bottom para não cobrir o conteúdo -->
+
+    <!-- Container Principal (agora guarda as "páginas") -->
+    <div class="max-w-3xl mx-auto p-4 sm:p-8">
+
+        <!-- ======================= -->
+        <!-- PÁGINA: INÍCIO (default) -->
+        <!-- ======================= -->
+        <div id="page-inicio" class="page-content">
+            <!-- Cabeçalho -->
+            <header class="text-center mb-10">
+                <h1 class="text-4xl sm:text-5xl font-bold text-violet-700 mb-4">Seu Ciclo, Seu Poder</h1>
+                <p class="text-lg text-gray-600">Um guia amigável para entender tudo sobre a sua primeira menstruação e
+                    seu corpo.</p>
+            </header>
+
+            <main>
+                <!-- Diagrama do Ciclo (Baseado na Imagem) -->
+                <section class="mb-12">
+                    <div class="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto">
+                        <!-- Quadrantes Coloridos -->
+                        <div
+                            class="absolute top-0 left-0 w-1/2 h-1/2 bg-rose-300 rounded-tl-full flex items-start justify-start p-6 sm:p-8">
+                            <span class="font-bold text-rose-800 text-sm sm:text-base">Menstruação</span>
+                        </div>
+                        <div
+                            class="absolute top-0 right-0 w-1/2 h-1/2 bg-emerald-300 rounded-tr-full flex items-start justify-end p-6 sm:p-8 text-right">
+                            <span class="font-bold text-emerald-800 text-sm sm:text-base">Ovulação</span>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-violet-300 rounded-bl-full flex items-end justify-start p-6 sm:p-8">
+                            <span class="font-bold text-violet-800 text-sm sm:text-base">Folicular</span>
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-sky-300 rounded-br-full flex items-end justify-end p-6 sm:p-8 text-right">
+                            <span class="font-bold text-sky-800 text-sm sm:text-base">Lútea</span>
+                        </div>
+
+                        <!-- Círculo Central -->
+                        <div
+                            class="absolute top-1/2 left-1/2 w-28 h-28 sm:w-32 sm:h-32 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center shadow-lg">
+                            <span class="text-5xl">🩸</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Wrapper dos Módulos Acordeão -->
+                <div class="space-y-6">
+
+                    <!-- MÓDULO 1: O CICLO SEM MISTÉRIO -->
+                    <div class="shadow-lg rounded-2xl">
+                        <!-- Cabeçalho Clicável -->
+                        <div
+                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4">🩸</span>
+                                <div>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 1: O CICLO SEM
+                                        MISTÉRIO</h2>
+                                    <p class="text-sm sm:text-base text-gray-600">Duração Normal: 21-35 dias.</p>
+                                </div>
+                            </div>
+                            <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
+                        </div>
+                        <!-- Conteúdo Oculto -->
+                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                            <!-- Card: O que é o Ciclo? -->
+                            <div class="bg-violet-50 p-6 rounded-2xl shadow-inner mb-6">
+                                <h3 class="text-xl font-bold text-violet-600 mb-3">O que é o Ciclo?</h3>
+                                <p class="leading-relaxed">O ciclo menstrual começa no primeiro dia da sua menstruação e
+                                    vai até o dia anterior à próxima. Seu corpo se prepara para uma possível gravidez a
+                                    cada mês. Se ela não acontece, ele 'limpa a casa' e o sangramento vem.</p>
+                                <p class="font-semibold text-gray-800 mt-3">Duração Normal: 21 a 35 dias.</p>
+                            </div>
+                            <!-- Grid Fases do Ciclo -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-rose-600 mb-3">Menstruação</h3>
+                                    <p class="leading-relaxed">É a descamação da camada interna do seu útero
+                                        (endométrio).<br><strong>Dica:</strong> Não é sangue 'sujo'! É apenas um tecido
+                                        que seu corpo não precisava mais. A duração costuma ser de 3 a 7 dias.</p>
+                                </div>
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">Folicular (Pré-Ovulação)</h3>
+                                    <p class="leading-relaxed">Seu corpo está produzindo estrogênio e preparando um
+                                        óvulo. Muitas vezes você se sente com mais energia, disposta e com mais foco.
+                                    </p>
+                                </div>
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-emerald-600 mb-3">Ovulação</h3>
+                                    <p class="leading-relaxed">O óvulo é liberado. É o "ápice" do seu ciclo, e você pode
+                                        notar um muco vaginal mais transparente e elástico neste período.</p>
+                                </div>
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-sky-600 mb-3">Lútea (Pré-Menstrual)</h3>
+                                    <p class="leading-relaxed">O hormônio progesterona domina aqui. É normal sentir mais
+                                        sono, inchaço e algumas mudanças de humor (TPM). Seu corpo está guardando
+                                        energia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SINAIS DE ALERTA -->
+                    <div class="shadow-lg rounded-2xl">
+                        <!-- Cabeçalho Clicável -->
+                        <div
+                            class="module-toggle bg-orange-100 p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4">🚨</span>
+                                <div>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-orange-700">Sinais de Alerta</h2>
+                                    <p class="text-sm sm:text-base text-orange-600">Quando procurar o Enfermeiro?</p>
+                                </div>
+                            </div>
+                            <span class="toggle-icon text-3xl font-bold text-orange-700">＋</span>
+                        </div>
+                        <!-- Conteúdo Oculto -->
+                        <div
+                            class="module-content hidden bg-orange-50 rounded-b-2xl border-t border-orange-200 px-5 sm:px-6">
+                            <ul class="list-none space-y-3 text-orange-800">
+                                <li class="flex items-start">
+                                    <span class="font-bold text-xl mr-3">›</span>
+                                    <div><strong>Fluxo Muito Forte:</strong> Precisa trocar absorvente de hora em hora
+                                        por mais de 4 horas seguidas.</div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-xl mr-3">›</span>
+                                    <div><strong>Dor Incapacitante:</strong> Cólica que não passa com remédio ou te
+                                        impede de ir à aula/trabalho, ou que te faz vomitar.</div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-xl mr-3">›</span>
+                                    <div><strong>Ciclos Extremos:</strong> Ciclo com menos de 21 dias ou mais de 35
+                                        dias, de forma persistente.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 2: BEM-ESTAR E EMOÇÕES -->
+                    <div class="shadow-lg rounded-2xl">
+                        <!-- Cabeçalho Clicável -->
+                        <div
+                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4">💪</span>
+                                <div>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 2: BEM-ESTAR E
+                                        EMOÇÕES</h2>
+                                    <p class="text-sm sm:text-base text-gray-600">Lidando com cólicas, TPM e nutrição.
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
+                        </div>
+                        <!-- Conteúdo Oculto -->
+                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <!-- Card: Cólicas -->
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">Cólicas: O Que Alivia?</h3>
+                                    <ul class="list-none space-y-4">
+                                        <li class="flex items-start">
+                                            <span class="text-2xl mr-3">🔥</span>
+                                            <div><strong>Calor:</strong> Use bolsa de água quente na barriga/costas.
+                                                Ajuda a relaxar os músculos do útero.</div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-2xl mr-3">💊</span>
+                                            <div><strong>Remédio:</strong> Tome o analgésico no início do incômodo.
+                                                Converse com o enfermeiro sobre qual é o mais indicado.</div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-2xl mr-3">🧘‍♀️</span>
+                                            <div><strong>Movimento:</strong> Alongamentos suaves e caminhadas leves
+                                                podem ajudar a relaxar.</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Card: TPM vs. TDPM -->
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">TPM vs. TDPM</h3>
+                                    <p class="leading-relaxed">É normal sentir-se diferente (irritada, cansada) antes da
+                                        menstruação. Se as emoções ou a ansiedade forem tão fortes que atrapalham seus
+                                        estudos ou sua vida social, chame isso de TDPM. Nesses casos, converse com o
+                                        enfermeiro ou um psicólogo.</p>
+                                </div>
+                            </div>
+                            <!-- Card: Nutrição -->
+                            <div class="bg-gray-50 p-6 rounded-2xl shadow-inner mt-6">
+                                <h3 class="text-xl font-bold text-violet-600 mb-3">Nutrição e Seu Humor</h3>
+                                <ul class="list-none space-y-4">
+                                    <li class="flex items-start">
+                                        <span class="text-2xl mr-3">💧</span>
+                                        <div><strong>Beba Água:</strong> Ajuda a reduzir o inchaço e a retenção de
+                                            líquido da fase pré-menstrual.</div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-2xl mr-3">🥦</span>
+                                        <div><strong>Coma Ferro:</strong> Durante o fluxo, alimentos ricos em ferro
+                                            (carne, legumes escuros) ajudam a repor o que foi perdido e evitam a
+                                            fraqueza.</div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-2xl mr-3">🧂</span>
+                                        <div><strong>Reduza o Sal:</strong> Menos sal ajuda a reduzir o inchaço.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 3: CUIDADOS PRÁTICOS E HIGIENE -->
+                    <div class="shadow-lg rounded-2xl">
+                        <!-- Cabeçalho Clicável -->
+                        <div
+                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4">🧺</span>
+                                <div>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 3: CUIDADOS E HIGIENE
+                                    </h2>
+                                    <p class="text-sm sm:text-base text-gray-600">Higiene íntima correta e trocas.</p>
+                                </div>
+                            </div>
+                            <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
+                        </div>
+                        <!-- Conteúdo Oculto -->
+                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">Higiene Íntima Correta</h3>
+                                    <ul class="list-none space-y-4">
+                                        <li class="flex items-start">
+                                            <span class="text-2xl mr-3">🧼</span>
+                                            <div><strong>Como lavar:</strong> Sempre de frente para trás. Use água e
+                                                sabão neutro (ou sabonete íntimo) somente na parte externa.</div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-2xl mr-3">🚫</span>
+                                            <div><strong>O quê evitar:</strong> Nunca lave o canal vaginal por dentro
+                                                (ele se limpa sozinho!).</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">Frequência de Troca</h3>
+                                    <p class="leading-relaxed"><strong>Regra de Ouro:</strong> Trocar absorvente
+                                        (externo) a cada 3 a 4 horas, mesmo com pouco fluxo. Trocar a tempo evita odores
+                                        e ajuda a manter a pele saudável.</p>
+                                </div>
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">EcoAbsorvente de Pano</h3>
+                                    <p class="leading-relaxed mb-3"><strong>Vantagens:</strong> Sustentável, econômico a
+                                        longo prazo e muito confortável.</p>
+                                    <p class="leading-relaxed"><strong>Atenção:</strong> A lavagem correta é crucial
+                                        para a sua saúde! Lave-o à mão após o uso, seque-o totalmente ao sol e guarde-o
+                                        em um local arejado.</p>
+                                </div>
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">Descarte Consciente</h3>
+                                    <ul class="list-none space-y-4">
+                                        <li class="flex items-start">
+                                            <span class="text-2xl mr-3">🗑️</span>
+                                            <div><strong>Onde Jogar:</strong> No lixo comum. Sempre embrulhe o produto
+                                                usado em papel higiênico ou na embalagem original antes de descartar.
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-2xl mr-3">🚫</span>
+                                            <div><strong>Nunca</strong> jogue absorvente, papel higiênico ou outros
+                                                produtos no vaso sanitário.</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 4: SEXUALIDADE E PREVENÇÃO -->
+                    <div class="shadow-lg rounded-2xl">
+                        <!-- Cabeçalho Clicável -->
+                        <div
+                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4">💘</span>
+                                <div>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 4: SEXUALIDADE E
+                                        PREVENÇÃO</h2>
+                                    <p class="text-sm sm:text-base text-gray-600">O Ciclo Não é Contraceptivo! (Alerta)
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
+                        </div>
+                        <!-- Conteúdo Oculto -->
+                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                            <!-- Card: Alerta -->
+                            <div class="bg-rose-100 border-l-4 border-rose-500 p-6 rounded-lg shadow-lg mb-6">
+                                <h3 class="text-xl font-bold text-rose-700 mb-3">O Ciclo Não é Contraceptivo! (Alerta)
+                                </h3>
+                                <p class="leading-relaxed mb-2"><strong>Mito:</strong> O ciclo menstrual regular é
+                                    confiável para evitar gravidez.</p>
+                                <p class="leading-relaxed"><strong>Verdade:</strong> O corpo adolescente é irregular!
+                                    Não use o app como um calendário contraceptivo. A única forma segura de evitar
+                                    gravidez é o uso consistente de métodos.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">Prevenção de ISTs/Aids</h3>
+                                    <p class="leading-relaxed">A camisinha (masculina ou feminina) é o único método que
+                                        evita as Infecções Sexualmente Transmissíveis (ISTs) e ainda ajuda a evitar
+                                        gravidez. Você pode conseguir camisinhas de graça na enfermaria da escola ou no
+                                        posto de saúde.</p>
+                                </div>
+                                <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                                    <h3 class="text-xl font-bold text-violet-600 mb-3">Métodos Contraceptivos</h3>
+                                    <p class="leading-relaxed">Se você está pensando em usar um método (pílula,
+                                        injetável, implante), venha conversar! O enfermeiro pode te dar o primeiro
+                                        aconselhamento e te encaminhar para o serviço de saúde. Sua escolha é importante
+                                        e precisa de acompanhamento profissional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 5: ONDE BUSCAR AJUDA -->
+                    <div class="shadow-lg rounded-2xl">
+                        <!-- Cabeçalho Clicável -->
+                        <div
+                            class="module-toggle bg-white p-5 sm:p-6 rounded-2xl flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <span class="text-3xl mr-4">✅</span>
+                                <div>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">MÓDULO 5: ONDE BUSCAR AJUDA
+                                    </h2>
+                                    <p class="text-sm sm:text-base text-gray-600">Seu Enfermeiro(a) Escolar e mais.</p>
+                                </div>
+                            </div>
+                            <span class="toggle-icon text-3xl font-bold text-violet-600">＋</span>
+                        </div>
+                        <!-- Conteúdo Oculto -->
+                        <div class="module-content hidden bg-white rounded-b-2xl border-t border-gray-100 px-5 sm:px-6">
+                            <div class="bg-emerald-100 border-l-4 border-emerald-500 p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold text-emerald-700 mb-4">Não Está Sozinha! Onde Buscar Ajuda?
+                                </h3>
+                                <ul class="list-none space-y-4">
+                                    <li class="flex items-start">
+                                        <span class="text-2xl mr-3">👩‍⚕️</span>
+                                        <div><strong>Seu Enfermeiro(a) Escolar:</strong> Para perguntas sobre seu ciclo,
+                                            cólicas, métodos contraceptivos, e aconselhamento sobre ISTs. Ele/ela é o
+                                            seu primeiro ponto de apoio e pode te orientar.</div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-2xl mr-3">🏥</span>
+                                        <div><strong>Posto de Saúde/UBS:</strong> Local de acesso gratuito a camisinhas,
+                                            testes rápidos, pílula do dia seguinte (se necessário) e para iniciar o uso
+                                            de métodos contraceptivos com acompanhamento médico.</div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-2xl mr-3">💬</span>
+                                        <div><strong>Psicólogo(a):</strong> Para suporte emocional, lidar com estresse,
+                                            ansiedade e em casos de TDPM (Transtorno Disfórico Pré-Menstrual) ou
+                                            questões sobre sexualidade e relacionamentos.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- Fim do Wrapper dos Módulos -->
+            </main>
+
+            <!-- Rodapé da Página Início -->
+            <footer class="text-center mt-12 py-6 border-t border-violet-200">
+                <p class="text-gray-600">Um projeto feito com carinho para você. ❤️</p>
+            </footer>
+        </div>
+
+        <!-- ========================== -->
+        <!-- PÁGINA: CALENDÁRIO (Oculta) -->
+        <!-- ========================== -->
+        <div id="page-calendario" class="page-content hidden">
+            <header class="text-center mb-10">
+                <h1 class="text-4xl sm:text-5xl font-bold text-violet-700 mb-4">Calendário do Ciclo</h1>
+                <p class="text-lg text-gray-600">Marque os dias da sua menstruação para acompanhar seu ciclo.</p>
+            </header>
+
+            <main>
+                <div id="calendar-container" class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
+                    <!-- Cabeçalho do Calendário (Mês/Ano e Botões) -->
+                    <div id="calendar-header" class="flex justify-between items-center mb-4">
+                        <button id="prev-month" class="p-2 rounded-full hover:bg-violet-100 text-violet-600">
+                            <!-- Ícone Lucide -->
+                            <i data-lucide="chevron-left" class="h-6 w-6"></i>
+                        </button>
+                        <h2 id="month-year" class="text-xl font-bold text-violet-800"></h2>
+                        <button id="next-month" class="p-2 rounded-full hover:bg-violet-100 text-violet-600">
+                            <!-- Ícone Lucide -->
+                            <i data-lucide="chevron-right" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dias da Semana -->
+                    <div id="calendar-weekdays"
+                        class="grid grid-cols-7 gap-1 sm:gap-2 text-center font-semibold text-gray-500 text-sm mb-2">
+                        <div>D</div>
+                        <div>S</div>
+                        <div>T</div>
+                        <div>Q</div>
+                        <div>Q</div>
+                        <div>S</div>
+                        <div>S</div>
+                    </div>
+
+                    <!-- Grid dos Dias -->
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-1 sm:gap-2">
+                        <!-- Dias serão gerados pelo JS -->
+                    </div>
+
+                    <!-- Legenda -->
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <h3 class="text-lg font-semibold mb-2 text-gray-700">Legenda:</h3>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 bg-rose-300 rounded-full mr-2 border border-rose-400"></div>
+                            <span class="text-gray-600">Dias de Menstruação</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- ========================== -->
+        <!-- PÁGINA: COMUNIDADE (Oculta) -->
+        <!-- ========================== -->
+        <div id="page-comunidade" class="page-content hidden">
+            <header class="text-center mb-10">
+                <h1 class="text-4xl sm:text-5xl font-bold text-violet-700 mb-4">Comunidade</h1>
+                <p class="text-lg text-gray-600">Um espaço para compartilhar e aprender juntas.</p>
+            </header>
+            <main class="space-y-8">
+
+                <!-- Caixa de Nova Postagem (Simulação) -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i data-lucide="message-square-plus" class="w-6 h-6 mr-3 text-violet-600"></i>
+                        Iniciar uma nova conversa
+                    </h2>
+                    <textarea
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+                        rows="3" placeholder="Escreva sua dúvida anônima ou compartilhe sua experiência..."></textarea>
+                    <button
+                        class="mt-4 w-full bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
+                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                        Postar (Simulação)
+                    </button>
+                    <p class="text-xs text-gray-500 mt-2 text-center">As postagens são estáticas para esta simulação.
+                    </p>
+                </div>
+
+                <!-- Feed de Tópicos Recentes (Simulação) -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold text-gray-800">Tópicos Recentes</h2>
+
+                    <!-- Post 1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <i data-lucide="user-circle-2" class="w-10 h-10 text-rose-500"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">MeninaLua</h3>
+                                <p class="text-xs text-gray-500">Postado 2 horas atrás</p>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-semibold text-violet-700 mb-2">É normal sentir tanta cólica no primeiro
+                            dia?</h4>
+                        <p class="text-gray-600 mb-4">Gente, sério, meu primeiro dia é sempre muito difícil, mal consigo
+                            levantar. Mais alguém passa por isso? O que vocês fazem?</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
+                            5 Respostas
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <i data-lucide="user-circle-2" class="w-10 h-10 text-emerald-500"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">CicloConsciente</h3>
+                                <p class="text-xs text-gray-500">Postado 8 horas atrás</p>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-semibold text-violet-700 mb-2">Dica sobre o eco-absorvente de pano!</h4>
+                        <p class="text-gray-600 mb-4">Para quem estava com medo de testar: eu comecei a usar o de pano
+                            no mês passado e foi a melhor decisão! Muito mais confortável...</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
+                            12 Respostas
+                        </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <i data-lucide="user-circle-2" class="w-10 h-10 text-sky-500"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Ana_PrimeiroCiclo</h3>
+                                <p class="text-xs text-gray-500">Postado 1 dia atrás</p>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-semibold text-violet-700 mb-2">Minha menstruação atrasou, devo me
+                            preocupar?</h4>
+                        <p class="text-gray-600 mb-4">Minha primeira menstruação veio há 3 meses, e agora ela está
+                            atrasada 10 dias. Isso é normal no começo? (Não sou sexualmente ativa).</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
+                            8 Respostas
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+
+        <!-- ====================== -->
+        <!-- PÁGINA: PERFIL (Oculta) -->
+        <!-- ====================== -->
+        <div id="page-perfil" class="page-content hidden">
+            <header class="text-center mb-10">
+                <h1 class="text-4xl sm:text-5xl font-bold text-violet-700 mb-4">Meu Perfil</h1>
+                <p class="text-lg text-gray-600">Ajuste suas informações e preferências.</p>
+            </header>
+            <main class="space-y-8">
+
+                <!-- Card de Informações Pessoais -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center space-x-4">
+                    <div>
+                        <!-- Ícone de Perfil Grande -->
+                        <i data-lucide="user-circle" class="w-16 h-16 text-violet-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <label for="nickname" class="text-sm font-medium text-gray-500">Seu apelido:</label>
+                        <input type="text" id="nickname" value="Visitante"
+                            class="w-full text-2xl font-bold text-gray-800 border-b-2 border-transparent focus:border-violet-500 outline-none transition-colors bg-transparent">
+                    </div>
+                    <button class="p-2 rounded-full hover:bg-violet-100 text-violet-600" aria-label="Salvar apelido">
+                        <i data-lucide="save" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- Card de Configurações do Ciclo -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i data-lucide="calendar-days" class="w-6 h-6 mr-3 text-violet-600"></i>
+                        Configurações do Ciclo
+                    </h2>
+                    <div class="space-y-6">
+                        <!-- Duração Média do Ciclo -->
+                        <div>
+                            <label for="cycle-length" class="block text-sm font-medium text-gray-700 mb-1">Duração média
+                                do seu ciclo (dias):</label>
+                            <p class="text-xs text-gray-500 mb-2">Conte do 1º dia da menstruação até o dia *anterior* à
+                                próxima.</p>
+                            <input type="number" id="cycle-length" value="28"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500">
+                        </div>
+                        <!-- Duração Média da Menstruação -->
+                        <div>
+                            <label for="period-length" class="block text-sm font-medium text-gray-700 mb-1">Duração
+                                média da sua menstruação (dias):</label>
+                            <input type="number" id="period-length" value="5"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500">
+                        </div>
+                        <button
+                            class="w-full bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
+                            <i data-lucide="save" class="w-5 h-5 mr-2"></i>
+                            Salvar Configurações do Ciclo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card de Preferências e Outros -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i data-lucide="settings-2" class="w-6 h-6 mr-3 text-violet-600"></i>
+                        Preferências e Outros
+                    </h2>
+                    <div class="space-y-4">
+                        <!-- Notificações (Simulado com Checkbox) -->
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <span class="font-medium text-gray-700">Lembretes e Notificações</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" checked>
+                                <div
+                                    class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-2 peer-focus:ring-violet-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-violet-600">
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Links Agora são Botões com data-target -->
+                        <button data-target="page-privacidade"
+                            class="subpage-trigger w-full text-left flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <span class="font-medium text-gray-700">Política de Privacidade</span>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400"></i>
+                        </button>
+                        <button data-target="page-termos"
+                            class="subpage-trigger w-full text-left flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <span class="font-medium text-gray-700">Termos de Uso</span>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400"></i>
+                        </button>
+                        <button data-target="page-ajuda"
+                            class="subpage-trigger w-full text-left flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <span class="font-medium text-gray-700">Ajuda e Suporte</span>
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <!-- ============================= -->
+        <!-- PÁGINA: PRIVACIDADE (Oculta)  -->
+        <!-- ============================= -->
+        <div id="page-privacidade" class="page-content hidden">
+            <header class="mb-8">
+                <!-- Botão Voltar -->
+                <button data-target="page-perfil"
+                    class="subpage-trigger mb-4 inline-flex items-center text-violet-600 font-semibold hover:text-violet-800 transition-colors">
+                    <i data-lucide="chevron-left" class="w-5 h-5 mr-1"></i>
+                    Voltar ao Perfil
+                </button>
+                <h1 class="text-4xl sm:text-5xl font-bold text-violet-700 mb-4">Política de Privacidade</h1>
+            </header>
+            <main class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg space-y-5 text-gray-700 leading-relaxed">
+                <p>Nós levamos sua privacidade a sério. Este aplicativo foi projetado para ser um espaço seguro para
+                    você.</p>
+
+                <h2 class="text-xl font-bold text-gray-800 pt-4">1. Quais dados coletamos?</h2>
+                <p>Coletamos apenas as informações que você insere voluntariamente, como:</p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Seu apelido (opcional).</li>
+                    <li>As datas do seu ciclo (dias de menstruação).</li>
+                    <li>As configurações do seu ciclo (duração média).</li>
+                </ul>
+
+                <h2 class="text-xl font-bold text-gray-800 pt-4">2. Como usamos seus dados?</h2>
+                <p>Os dados que você insere (como as datas do ciclo) são usados <strong
+                        class="text-violet-700">exclusivamente</strong> para fazer os cálculos das previsões do
+                    calendário. Eles ficam armazenados apenas no seu dispositivo e não são compartilhados com ninguém.
+                </p>
+
+                <h2 class="text-xl font-bold text-gray-800 pt-4">3. Compartilhamento de Dados</h2>
+                <p>Nós <strong class="text-rose-600">nunca</strong> venderemos ou compartilharemos suas informações
+                    pessoais ou dados do seu ciclo com terceiros.</p>
+
+                <h2 class="text-xl font-bold text-gray-800 pt-4">4. Seus Direitos</h2>
+                <p>Você tem controle total sobre seus dados. Você pode editar ou apagar suas informações a qualquer
+                    momento diretamente no aplicativo.</p>
+            </main>
+        </div>
+
+        <!-- ======================== -->
+        <!-- PÁGINA: TERMOS (Oculta)  -->
+        <!-- ======================== -->
+        <div id="page-termos" class="page-content hidden">
+            <header class="mb-8">
+                <!-- Botão Voltar -->
+                <button data-target="page-perfil"
+                    class="subpage-trigger mb-4 inline-flex items-center text-violet-600 font-semibold hover:text-violet-800 transition-colors">
+                    <i data-lucide="chevron-left" class="w-5 h-5 mr-1"></i>
+                    Voltar ao Perfil
+                </button>
+                <h1 class="text-4xl sm:text-5xl font-bold text-violet-700 mb-4">Termos de Uso</h1>
+            </header>
+            <main class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg space-y-5 text-gray-700 leading-relaxed">
+                <h2 class="text-xl font-bold text-gray-800">1. Aceitação dos Termos</h2>
+                <p>Ao usar este aplicativo, você concorda com estes termos. O objetivo deste app é puramente educacional
+                    e informativo.</p>
+
+                <h2 class="text-xl font-bold text-gray-800 pt-4">2. Este App Não é Aconselhamento Médico</h2>
+                <p class="font-bold text-rose-600">As informações e previsões fornecidas neste aplicativo NÃO substituem
+                    uma consulta com um profissional de saúde (como seu enfermeiro(a) escolar ou ginecologista).</p>
+                <p>O conteúdo é baseado em informações gerais e pode não se aplicar perfeitamente ao seu corpo,
+                    especialmente nos primeiros anos do ciclo, que pode ser muito irregular.</p>
+
+                <h2 class="text-xl font-bold text-gray-800 pt-4">3. Previsões do Calendário</h2>
+                <p>As previsões do calendário são <strong class="text-violet-700">estimativas</strong> baseadas nos
+                    dados que você insere. Elas podem conter erros e não devem, em hipótese alguma, ser usadas como
+                    método contraceptivo.</p>
+
+                <h2 class="text-xl font-bold text-gray-800 pt-4">4. Uso Responsável</h2>
+                <p>Use as informações aqui para aprender sobre seu corpo e para ter conversas mais informadas com
+                    profissionais de saúde e adultos de sua confiança.</p>
+            </main>
+        </div>
+
+        <!-- ======================= -->
+        <!-- PÁGINA: AJUDA (Oculta)  -->
+        <!-- ======================= -->
+        <div id="page-ajuda" class="page-content hidden">
+            <header class="mb-8">
+                <!-- Botão Voltar -->
+                <button data-target="page-perfil"
+                    class="subpage-trigger mb-4 inline-flex items-center text-violet-600 font-semibold hover:text-violet-800 transition-colors">
+                    <i data-lucide="chevron-left" class="w-5 h-5 mr-1"></i>
+                    Voltar ao Perfil
+                </button>
+                <h1 class="text-4xl sm:text-5xl font-bold text-violet-700 mb-4">Ajuda e Suporte</h1>
+                <p class="text-lg text-gray-600">Perguntas Frequentes (FAQ)</p>
+            </header>
+            <main class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg space-y-6">
+                <!-- FAQ 1 -->
+                <div>
+                    <h3 class="text-xl font-bold text-violet-700 mb-2">P: Como eu marco os dias da minha menstruação?
+                    </h3>
+                    <p><strong>R:</strong> É simples! Vá até a aba "Calendário", clique no dia em que sua menstruação
+                        começou e continue clicando nos dias seguintes enquanto ela durar. O dia ficará marcado com a
+                        cor rosa.</p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="pt-4 border-t border-gray-100">
+                    <h3 class="text-xl font-bold text-violet-700 mb-2">P: O calendário está mostrando previsões
+                        estranhas. O que eu faço?</h3>
+                    <p><strong>R:</strong> As previsões dependem das informações que você coloca! Vá na aba "Perfil" e
+                        ajuste as "Configurações do Ciclo". Coloque a duração média do seu ciclo (ex: 28 dias) e a
+                        duração média da sua menstruação (ex: 5 dias). Quanto mais você usar e marcar os dias, mais
+                        inteligente o calendário fica.</p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="pt-4 border-t border-gray-100">
+                    <h3 class="text-xl font-bold text-violet-700 mb-2">P: Estou com uma cólica muito forte / fluxo muito
+                        intenso. O que faço?</h3>
+                    <p><strong>R:</strong> Vá na aba "Início" e leia o card "Sinais de Alerta". Se você se identificar
+                        com qualquer um daqueles pontos, procure seu/sua Enfermeiro(a) Escolar ou um Posto de Saúde. Não
+                        ignore dores fortes!</p>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="pt-4 border-t border-gray-100">
+                    <h3 class="text-xl font-bold text-violet-700 mb-2">P: Posso usar o calendário para saber quando não
+                        vou engravidar?</h3>
+                    <p><strong class="text-rose-600">R: NÃO! NUNCA!</strong> Como diz o Módulo 4, o corpo adolescente é
+                        muito irregular. As previsões deste app são apenas estimativas para você se organizar e <strong
+                            class="underline">NÃO SERVEM</strong> como método contraceptivo. Converse com um
+                        profissional de saúde sobre isso.</p>
+                </div>
+            </main>
+        </div>
+
+
+    </div>
+
+    <!-- ======================== -->
+    <!-- NAVEGAÇÃO INFERIOR FIXA -->
+    <!-- ======================== -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-t-lg flex justify-around p-3 sm:p-4 z-50">
+        <!-- Botão Início (Ativo por padrão) -->
+        <button data-target="page-inicio"
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-violet-600">
+            <!-- Ícone Lucide -->
+            <i data-lucide="home" class="nav-icon w-6 h-6 mb-1 text-violet-600"></i>
+            <span class="nav-text text-xs sm:text-sm font-medium text-violet-600">Início</span>
+        </button>
+
+        <!-- Botão Calendário -->
+        <button data-target="page-calendario"
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400">
+            <!-- Ícone Lucide -->
+            <i data-lucide="calendar" class="nav-icon w-6 h-6 mb-1 text-gray-400"></i>
+            <span class="nav-text text-xs sm:text-sm font-medium text-gray-400">Calendário</span>
+        </button>
+
+        <!-- Botão Comunidade -->
+        <button data-target="page-comunidade"
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400">
+            <!-- Ícone Lucide -->
+            <i data-lucide="users" class="nav-icon w-6 h-6 mb-1 text-gray-400"></i>
+            <span class="nav-text text-xs sm:text-sm font-medium text-gray-400">Comunidade</span>
+        </button>
+
+        <!-- Botão Perfil -->
+        <button data-target="page-perfil"
+            class="nav-button flex flex-col items-center justify-center w-1/4 text-gray-400">
+            <!-- Ícone Lucide -->
+            <i data-lucide="user" class="nav-icon w-6 h-6 mb-1 text-gray-400"></i>
+            <span class="nav-text text-xs sm:text-sm font-medium text-gray-400">Perfil</span>
+        </button>
+    </nav>
+
+
+    <!-- ================== -->
+    <!-- SCRIPT GERAL (JS) -->
+    <!-- ================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- LÓGICA DE NAVEGAÇÃO DAS PÁGINAS ---
+            const navButtons = document.querySelectorAll('.nav-button');
+            const pages = document.querySelectorAll('.page-content');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetPageId = button.dataset.target;
+
+                    // Esconde todas as páginas
+                    pages.forEach(page => page.classList.add('hidden'));
+
+                    // Mostra a página alvo
+                    const targetPage = document.getElementById(targetPageId);
+                    if (targetPage) {
+                        targetPage.classList.remove('hidden');
+                    }
+
+                    // Atualiza o estado visual dos botões de navegação
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('text-violet-600');
+                        btn.classList.add('text-gray-400');
+                        btn.querySelector('.nav-icon').classList.remove('text-violet-600');
+                        btn.querySelector('.nav-icon').classList.add('text-gray-400');
+                        btn.querySelector('.nav-text').classList.remove('text-violet-600');
+                        btn.querySelector('.nav-text').classList.add('text-gray-400');
+                    });
+
+                    // Ativa o botão clicado
+                    button.classList.add('text-violet-600');
+                    button.classList.remove('text-gray-400');
+                    button.querySelector('.nav-icon').classList.add('text-violet-600');
+                    button.querySelector('.nav-icon').classList.remove('text-gray-400');
+                    button.querySelector('.nav-text').classList.add('text-violet-600');
+                    button.querySelector('.nav-text').classList.remove('text-gray-400');
+
+                    // Rola a página para o topo ao trocar de aba
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // --- LÓGICA DE NAVEGAÇÃO DE SUB-PÁGINAS (Perfil > Links) ---
+            const subpageTriggers = document.querySelectorAll('.subpage-trigger');
+
+            subpageTriggers.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetPageId = button.dataset.target;
+
+                    // Esconde todas as páginas
+                    pages.forEach(page => page.classList.add('hidden'));
+
+                    // Mostra a página alvo
+                    const targetPage = document.getElementById(targetPageId);
+                    if (targetPage) {
+                        targetPage.classList.remove('hidden');
+                    }
+
+                    // Rola a página para o topo
+                    window.scrollTo(0, 0);
+                    // Nota: Esta lógica não mexe no estado visual da nav principal
+                });
+            });
+
+            // --- LÓGICA DO ACORDEÃO (para a página "Início") ---
+            const toggles = document.querySelectorAll('.module-toggle');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.toggle-icon');
+
+                    content.classList.toggle('hidden');
+                    toggle.classList.toggle('rounded-b-2xl'); // Arredonda o cabeçalho quando fechado
+
+                    if (content.classList.contains('hidden')) {
+                        icon.textContent = '＋';
+                    } else {
+                        icon.textContent = '－';
+                    }
+                });
+            });
+
+            // --- LÓGICA DO CALENDÁRIO (para a página "Calendário") ---
+            const monthYearEl = document.getElementById('month-year');
+            const gridEl = document.getElementById('calendar-grid');
+            const prevBtn = document.getElementById('prev-month');
+            const nextBtn = document.getElementById('next-month');
+
+            // Verifica se os elementos do calendário existem antes de adicionar listeners
+            if (monthYearEl && gridEl && prevBtn && nextBtn) {
+                let currentDate = new Date();
+                // Usamos um Set para guardar as datas selecionadas no formato "YYYY-MM-DD"
+                let selectedDates = new Set();
+                const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+                function renderCalendar(year, month) {
+                    // Limpa o grid
+                    gridEl.innerHTML = '';
+
+                    // Define o cabeçalho com Mês/Ano
+                    monthYearEl.textContent = `${monthNames[month]} ${year}`;
+
+                    // Pega o primeiro dia da semana (0=Domingo, 1=Segunda, ...)
+                    let firstDayOfWeek = new Date(year, month, 1).getDay();
+                    // Pega o total de dias no mês
+                    let totalDaysInMonth = new Date(year, month + 1, 0).getDate();
+
+                    // 1. Adiciona células vazias para o "offset" do início do mês
+                    for (let i = 0; i < firstDayOfWeek; i++) {
+                        gridEl.appendChild(document.createElement('div'));
+                    }
+
+                    // 2. Adiciona as células dos dias
+                    for (let day = 1; day <= totalDaysInMonth; day++) {
+                        const dayEl = document.createElement('div');
+                        const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+                        dayEl.textContent = day;
+                        dayEl.classList.add('h-10', 'w-10', 'flex', 'items-center', 'justify-center', 'rounded-full', 'cursor-pointer', 'hover:bg-violet-100', 'transition-colors', 'duration-150');
+
+                        // Marca o dia atual (hoje)
+                        let today = new Date();
+                        if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                            dayEl.classList.add('bg-violet-100', 'text-violet-700', 'font-bold');
+                        }
+
+                        // Destaca se o dia estiver selecionado
+                        if (selectedDates.has(dateString)) {
+                            dayEl.classList.add('bg-rose-300', 'text-rose-800', 'font-bold');
+                            dayEl.classList.remove('bg-violet-100', 'text-violet-700'); // Remove o destaque de "hoje" se estiver selecionado
+                        }
+
+                        // Adiciona evento de clique para selecionar/desselecionar
+                        dayEl.addEventListener('click', () => {
+                            if (selectedDates.has(dateString)) {
+                                selectedDates.delete(dateString);
+                                dayEl.classList.remove('bg-rose-300', 'text-rose-800', 'font-bold');
+                                // Se for hoje, readiciona o estilo de "hoje"
+                                if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                                    dayEl.classList.add('bg-violet-100', 'text-violet-700');
+                                }
+                            } else {
+                                selectedDates.add(dateString);
+                                dayEl.classList.add('bg-rose-300', 'text-rose-800', 'font-bold');
+                                dayEl.classList.remove('bg-violet-100', 'text-violet-700');
+                            }
+                        });
+
+                        gridEl.appendChild(dayEl);
+                    }
+                }
+
+                // Botão Mês Anterior
+                prevBtn.addEventListener('click', () => {
+                    currentDate.setMonth(currentDate.getMonth() - 1);
+                    renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+                });
+
+                // Botão Próximo Mês
+                nextBtn.addEventListener('click', () => {
+                    currentDate.setMonth(currentDate.getMonth() + 1);
+                    renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+                });
+
+                // Renderiza o calendário inicial
+                renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
+            }
+
+            // --- INICIALIZA LUCIDE ICONS ---
+            // Esta função deve ser chamada depois que todo o HTML foi carregado
+            // e também depois de qualquer manipulação de DOM que adicione
+            // novos elementos com `data-lucide`.
+            lucide.createIcons();
+        });
+    </script>
+
+</body>
+
+</html>
