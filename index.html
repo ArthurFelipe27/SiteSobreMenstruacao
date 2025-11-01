@@ -518,6 +518,10 @@
                         <i data-lucide="message-square-plus" class="w-6 h-6 mr-3 text-violet-600"></i>
                         Iniciar uma nova conversa
                     </h2>
+                    <!-- NOVO CAMPO DE TÍTULO -->
+                    <input type="text" id="post-title-input"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 mb-4"
+                        placeholder="Escreva um título para sua postagem...">
                     <textarea id="post-textarea"
                         class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
                         rows="3" placeholder="Escreva sua dúvida anônima ou compartilhe sua experiência..."></textarea>
@@ -1116,6 +1120,7 @@
 
             // --- LÓGICA DA COMUNIDADE (page-comunidade) ---
             const postTextarea = document.getElementById('post-textarea');
+            const postTitleInput = document.getElementById('post-title-input'); // NOVO
             const postBtn = document.getElementById('post-btn');
             const feedWrapper = document.getElementById('community-feed-wrapper');
             const postDetailContent = document.getElementById('post-detail-content');
@@ -1195,22 +1200,24 @@
             // Postar
             if (postBtn) {
                 postBtn.addEventListener('click', () => {
+                    const title = postTitleInput.value.trim(); // NOVO
                     const text = postTextarea.value.trim();
-                    if (text) {
+                    if (text && title) { // ATUALIZADO: agora checa se ambos (título e texto) existem
                         const newPost = {
                             id: Date.now(),
-                            author: userNickname,
-                            avatarColor: 'text-violet-500',
+                            author: userNickname, // Usa o nickname salvo
+                            avatarColor: 'text-violet-500', // Cor para novos posts
                             timestamp: 'Agora mesmo',
-                            title: text.substring(0, 50) + (text.length > 50 ? '...' : ''),
-                            body: text,
+                            title: title, // ATUALIZADO: usa o valor do input de título
+                            body: text, // ATUALIZADO: usa o valor do textarea
                             replies: [] // Inicia com array vazio
                         };
 
-                        communityPosts.unshift(newPost);
+                        communityPosts.unshift(newPost); // Adiciona no início
                         localStorage.setItem(STORAGE_KEY_POSTS, JSON.stringify(communityPosts));
                         renderCommunityPosts();
                         postTextarea.value = '';
+                        postTitleInput.value = ''; // NOVO: limpa o campo de título
                     }
                 });
             }
