@@ -36,10 +36,26 @@
             padding-bottom: 1.5rem;
             /* 24px */
         }
+
+        /* Estilo para o Overlay de Carregamento */
+        #loading-overlay {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 
 <body class="bg-violet-50 text-gray-700 pb-24"> <!-- Padding-bottom para não cobrir o conteúdo -->
+
+    <!-- Overlay de Carregamento -->
+    <div id="loading-overlay" class="fixed inset-0 bg-violet-50 z-[100] flex flex-col items-center justify-center">
+        <!-- Ícone Lucide Spinner Animado -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-loader-circle animate-spin text-violet-600">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+        </svg>
+        <p class="text-violet-700 font-semibold mt-4">Carregando seus dados...</p>
+    </div>
 
     <!-- Container Principal (agora guarda as "páginas") -->
     <div class="max-w-3xl mx-auto p-4 sm:p-8">
@@ -518,7 +534,7 @@
                         <i data-lucide="message-square-plus" class="w-6 h-6 mr-3 text-violet-600"></i>
                         Iniciar uma nova conversa
                     </h2>
-                    <!-- NOVO CAMPO DE TÍTULO -->
+                    <!-- CAMPO DE TÍTULO -->
                     <input type="text" id="post-title-input"
                         class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 mb-4"
                         placeholder="Escreva um título para sua postagem...">
@@ -530,8 +546,9 @@
                         <i data-lucide="send" class="w-5 h-5 mr-2"></i>
                         Postar
                     </button>
-                    <p class="text-xs text-gray-500 mt-2 text-center">Suas postagens ficam salvas no seu dispositivo.
-                    </p>
+                    <!-- TEXTO ATUALIZADO (NÃO MAIS LOCALSTORAGE) -->
+                    <p class="text-xs text-gray-500 mt-2 text-center">Suas postagens são públicas e visíveis para toda a
+                        comunidade.</p>
                 </div>
 
                 <!-- Feed de Tópicos Recentes (Dinâmico) -->
@@ -655,32 +672,21 @@
                     </div>
                 </div>
 
-                <!-- Card de Gerenciamento de Dados -->
+                <!-- ATUALIZADO: Card de Gerenciamento de Dados (Agora mostra o User ID) -->
                 <div class="bg-white p-6 rounded-2xl shadow-lg">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                        <i data-lucide="archive" class="w-6 h-6 mr-3 text-violet-600"></i>
-                        Gerenciamento de Dados
+                        <i data-lucide="key-round" class="w-6 h-6 mr-3 text-violet-600"></i>
+                        Sua Conta
                     </h2>
-                    <p class="text-sm text-gray-600 mb-6">Salve uma cópia de segurança dos seus dados (apelido,
-                        configurações, datas do ciclo e posts) ou restaure um backup. Seus dados são salvos apenas neste
-                        navegador.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button id="export-data-btn"
-                            class="flex-1 bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
-                            <i data-lucide="download" class="w-5 h-5 mr-2"></i>
-                            Exportar Meus Dados
-                        </button>
-
-                        <label for="import-file-input"
-                            class="flex-1 bg-gray-100 text-gray-800 font-bold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center cursor-pointer">
-                            <i data-lucide="upload" class="w-5 h-5 mr-2"></i>
-                            Importar Dados
-                        </label>
-                        <input type="file" id="import-file-input" class="hidden" accept=".json">
-
-                    </div>
-                    <span id="import-feedback"
-                        class="mt-4 text-sm text-green-600 font-medium opacity-0 transition-opacity duration-300 block text-center"></span>
+                    <p class="text-sm text-gray-600 mb-4">Seus dados (perfil e calendário) estão salvos na nuvem de
+                        forma anônima.</p>
+                    <label for="user-id-display" class="block text-sm font-medium text-gray-700 mb-1">Seu ID de usuário
+                        anônimo:</label>
+                    <input type="text" id="user-id-display" value="Carregando..." readonly
+                        class="w-full p-3 border border-gray-200 rounded-lg bg-gray-50 text-gray-500 text-sm break-words">
+                    <p class="text-xs text-gray-500 mt-2">Este ID é a única forma de acessar seus dados. Guarde-o se
+                        quiser acessá-lo em outro dispositivo no futuro (funcionalidade de "login com ID" a ser
+                        implementada).</p>
                 </div>
 
                 <!-- Card de Preferências e Outros -->
@@ -741,28 +747,38 @@
                     você.</p>
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">1. Quais dados coletamos?</h2>
-                <p>Coletamos apenas as informações que você insere voluntariamente, como:</p>
+                <p>Coletamos as informações que você insere voluntariamente, que são armazenadas de forma segura nos
+                    servidores do Google Firebase:</p>
                 <ul class="list-disc list-inside ml-4 space-y-1">
                     <li>Seu apelido (opcional).</li>
                     <li>As datas do seu ciclo (dias de menstruação).</li>
                     <li>As configurações do seu ciclo (duração média).</li>
-                    <li>Posts e respostas na comunidade (apenas no seu dispositivo).</li>
+                    <li>Posts e respostas na comunidade.</li>
+                    <li>Um ID de usuário anônimo para conectar você aos seus dados.</li>
                 </ul>
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">2. Como usamos seus dados?</h2>
-                <p>Os dados que você insere (como as datas do ciclo) são usados <strong
-                        class="text-violet-700">exclusivamente</strong> para fazer os cálculos das previsões do
-                    calendário. Eles ficam armazenados apenas no seu dispositivo e não são compartilhados com ninguém.
-                </p>
+                <p>Os dados são usados para o funcionamento do aplicativo:</p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li><strong class="text-violet-700">Dados Privados:</strong> Seu apelido, datas do ciclo e
+                        configurações são salvos de forma privada, vinculados apenas ao seu ID anônimo. Ninguém mais
+                        pode ver esses dados.</li>
+                    <li><strong class="text-violet-700">Dados Públicos:</strong> Os posts e respostas que você cria na
+                        Comunidade são públicos e visíveis para outras usuárias do aplicativo. Eles são postados
+                        juntamente com o apelido que você escolheu.</li>
+                </ul>
+
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">3. Compartilhamento de Dados</h2>
                 <p>Nós <strong class="text-rose-600">nunca</strong> venderemos ou compartilharemos suas informações
-                    pessoais ou dados do seu ciclo com terceiros. Tudo fica salvo localmente no seu navegador.</p>
+                    <strong class="text-rose-600">privadas</strong> (como seu histórico de ciclo) com terceiros. Os
+                    dados
+                    da comunidade são, por natureza, públicos dentro do app.
+                </p>
 
                 <h2 class="text-xl font-bold text-gray-800 pt-4">4. Seus Direitos</h2>
-                <p>Você tem controle total sobre seus dados. Você pode editar ou apagar suas informações a qualquer
-                    momento diretamente no aplicativo. Você pode usar a função "Exportar Dados" no Perfil para salvar um
-                    backup.</p>
+                <p>Você tem controle sobre seus dados. Você pode editar seu apelido e configurações ou apagar as datas
+                    do seu calendário a qualquer momento.</p>
             </main>
         </div>
 
@@ -796,9 +812,10 @@
                     seus ciclos anteriores. Elas podem conter erros e não devem, em hipótese alguma, ser usadas como
                     método contraceptivo.</p>
 
-                <h2 class="text-xl font-bold text-gray-800 pt-4">4. Uso Responsável</h2>
-                <p>Use as informações aqui para aprender sobre seu corpo e para ter conversas mais informadas com
-                    profissionais de saúde e adultos de sua confiança.</p>
+                <h2 class="text-xl font-bold text-gray-800 pt-4">4. Uso Responsável da Comunidade</h2>
+                <p>A aba "Comunidade" é um espaço público. Seja respeitosa com as outras usuárias. Não compartilhe
+                    informações pessoais identificáveis. Posts ofensivos ou inadequados podem ser removidos (requer
+                    moderação futura).</p>
             </main>
         </div>
 
@@ -838,11 +855,10 @@
 
                 <!-- FAQ 3 -->
                 <div class="pt-4 border-t border-gray-100">
-                    <h3 class="text-xl font-bold text-violet-700 mb-2">P: Estou com uma cólica muito forte / fluxo muito
-                        intenso. O que faço?</h3>
-                    <p><strong>R:</strong> Vá na aba "Início" e leia o card "Sinais de Alerta". Se você se identificar
-                        com qualquer um daqueles pontos, procure seu/sua Enfermeiro(a) Escolar ou um Posto de Saúde. Não
-                        ignore dores fortes!</p>
+                    <h3 class="text-xl font-bold text-violet-700 mb-2">P: Meus dados sumiram! O que eu faço?</h3>
+                    <p><strong>R:</strong> Seus dados estão salvos na nuvem anonimamente. Se você limpou os dados do
+                        navegador, pode ter perdido seu ID anônimo. No futuro, planejamos adicionar uma forma de
+                        restaurar sua conta usando o "ID de Usuário" que aparece no seu Perfil.</p>
                 </div>
 
                 <!-- FAQ 4 -->
@@ -902,62 +918,72 @@
     <!-- ================== -->
     <!-- SCRIPT GERAL (JS) -->
     <!-- ================== -->
-    <script>
+    <!-- MUDANÇA: O script agora é type="module" para suportar importações -->
+    <script type="module">
+        // NOVO: Importações do Firebase (VERSÃO 12.5.0)
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+        import {
+            getFirestore, doc, getDoc, setDoc, addDoc, updateDoc, collection,
+            query, onSnapshot, serverTimestamp, increment, setLogLevel, orderBy
+        } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- CHAVES E DADOS DO LOCALSTORAGE ---
-            const STORAGE_KEY_CONFIG = 'cicloConfig';
-            const STORAGE_KEY_DATES = 'cicloSelectedDates';
-            const STORAGE_KEY_POSTS = 'cicloCommunityPosts';
-            const STORAGE_KEY_NICKNAME = 'cicloNickname';
+            // --- NOVO: Variáveis Globais do Firebase e Estado ---
+            let app, db, auth;
+            let currentUserId = null;
+            let userNickname = 'Visitante';
+            let cicloConfig = { cycleLength: 28, periodLength: 5 };
+            let selectedDates = new Set();
+            let communityPosts = []; // Cache local dos posts
+            let unsubscribeFromPosts = null; // Listener da comunidade
+            let unsubscribeFromReplies = null; // Listener das respostas
+            let currentPostIdForReplies = null; // Para saber qual post estamos vendo
 
-            // Carrega dados do localStorage ou usa valores padrão
-            let cicloConfig = JSON.parse(localStorage.getItem(STORAGE_KEY_CONFIG)) || {
-                cycleLength: 28,
-                periodLength: 5
+            // === ALTERAÇÃO PARA TESTE LOCAL ===
+            // As variáveis __app_id e __firebase_config foram substituídas
+            // pela sua configuração real do Firebase.
+            const appId = 'site-cons-mestruacao'; // Usando seu Project ID
+            const firebaseConfig = {
+                apiKey: "AIzaSyANdpfR-R3fM6eqIOQJcx6yomQLpGqLNDA",
+                authDomain: "site-cons-mestruacao.firebaseapp.com",
+                projectId: "site-cons-mestruacao",
+                storageBucket: "site-cons-mestruacao.firebasestorage.app",
+                messagingSenderId: "758087720275",
+                appId: "1:758087720275:web:07b63198f2a034346d15a6"
             };
-            let selectedDates = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY_DATES)) || []);
-            let userNickname = localStorage.getItem(STORAGE_KEY_NICKNAME) || 'Visitante';
+            // === FIM DA ALTERAÇÃO ===
 
-            // Posts de fallback (usados se o localStorage estiver vazio)
-            // ATUALIZADO: 'replies' agora é um array de objetos
-            const fallbackPosts = [
-                {
-                    id: 1,
-                    author: 'MeninaLua',
-                    avatarColor: 'text-rose-500',
-                    timestamp: '2 horas atrás',
-                    title: 'É normal sentir tanta cólica no primeiro dia?',
-                    body: 'Gente, sério, meu primeiro dia é sempre muito difícil, mal consigo levantar. Mais alguém passa por isso? O que vocês fazem?',
-                    replies: [
-                        { id: 101, author: 'Visitante', timestamp: '1 hora atrás', body: 'Comigo também é assim! 😥' },
-                        { id: 102, author: 'CicloConsciente', timestamp: '30 min atrás', body: 'Uma bolsa de água quente na barriga ajuda muito a relaxar os músculos. Tenta isso!' }
-                    ]
-                },
-                {
-                    id: 2,
-                    author: 'CicloConsciente',
-                    avatarColor: 'text-emerald-500',
-                    timestamp: '8 horas atrás',
-                    title: 'Dica sobre o eco-absorvente de pano!',
-                    body: 'Para quem estava com medo de testar: eu comecei a usar o de pano no mês passado e foi a melhor decisão! Muito mais confortável...',
-                    replies: []
-                },
-                {
-                    id: 3,
-                    author: 'Ana_PrimeiroCiclo',
-                    avatarColor: 'text-sky-500',
-                    timestamp: '1 dia atrás',
-                    title: 'Minha menstruação atrasou, devo me preocupar?',
-                    body: 'Minha primeira menstruação veio há 3 meses, e agora ela está atrasada 10 dias. Isso é normal no começo? (Não sou sexualmente ativa).',
-                    replies: [
-                        { id: 103, author: 'MeninaLua', timestamp: '20 horas atrás', body: 'Acho que no começo é super normal ser irregular. O meu foi assim também!' }
-                    ]
-                }
-            ];
-            let communityPosts = JSON.parse(localStorage.getItem(STORAGE_KEY_POSTS)) || fallbackPosts;
 
-            // --- FUNÇÃO HELPER PARA FEEDBACK ---
+            // --- NOVO: Elementos do DOM ---
+            const loadingOverlay = document.getElementById('loading-overlay');
+            const nicknameInput = document.getElementById('nickname');
+            const saveNicknameBtn = document.getElementById('save-nickname-btn');
+            const nicknameFeedback = document.getElementById('save-nickname-feedback');
+
+            const cycleLengthInput = document.getElementById('cycle-length');
+            const periodLengthInput = document.getElementById('period-length');
+            const saveConfigBtn = document.getElementById('save-config-btn');
+            const configFeedback = document.getElementById('save-config-feedback');
+            const avgCycleFeedback = document.getElementById('avg-cycle-feedback');
+            const userIdDisplay = document.getElementById('user-id-display');
+
+            const postTextarea = document.getElementById('post-textarea');
+            const postTitleInput = document.getElementById('post-title-input');
+            const postBtn = document.getElementById('post-btn');
+            const feedWrapper = document.getElementById('community-feed-wrapper');
+            const postDetailContent = document.getElementById('post-detail-content');
+            const postRepliesList = document.getElementById('post-replies-list');
+            const replyTextarea = document.getElementById('reply-textarea');
+            const replyBtn = document.getElementById('reply-btn');
+
+            const monthYearEl = document.getElementById('month-year');
+            const gridEl = document.getElementById('calendar-grid');
+            const prevBtn = document.getElementById('prev-month');
+            const nextBtn = document.getElementById('next-month');
+
+            // --- FUNÇÕES HELPER ---
             function showFeedback(element, message) {
                 if (element) {
                     element.textContent = message;
@@ -968,7 +994,6 @@
                 }
             }
 
-            // --- FUNÇÃO HELPER PARA ESCAPAR HTML ---
             function escapeHTML(str) {
                 if (typeof str !== 'string') return '';
                 return str.replace(/[&<>"']/g, (match) => ({
@@ -980,162 +1005,208 @@
                 }[match]));
             }
 
+            // NOVO: Função movida para o escopo global
+            function updateAverageCycleFeedback() {
+                if (!avgCycleFeedback) return;
+                const calculatedAvg = getAverageCycleLength();
+                if (calculatedAvg.average > 0) {
+                    avgCycleFeedback.textContent = `A média calculada dos seus últimos ${calculatedAvg.count} ciclos é de ${calculatedAvg.average} dias. O app usará esse valor.`;
+                } else {
+                    avgCycleFeedback.textContent = `Seu valor salvo (${cicloConfig.cycleLength} dias) será usado até você ter mais ciclos registrados.`;
+                }
+            }
+
+            // --- NOVO: LÓGICA DE INICIALIZAÇÃO DO FIREBASE ---
+            async function initializeFirebase() {
+                if (!firebaseConfig) {
+                    console.error("Configuração do Firebase não encontrada!");
+                    loadingOverlay.innerHTML = "<p class='text-red-600 p-4 text-center'>Erro: Configuração do Firebase não encontrada. O app não pode funcionar.</p>";
+                    return;
+                }
+
+                try {
+                    app = initializeApp(firebaseConfig);
+                    db = getFirestore(app);
+                    auth = getAuth(app);
+                    setLogLevel('Debug'); // Ativa logs detalhados do Firestore
+
+                    // Inicia o listener de autenticação
+                    onAuthStateChanged(auth, async (user) => {
+                        if (user) {
+                            // Usuário está logado (anonimamente)
+                            console.log('Usuário autenticado:', user.uid);
+                            currentUserId = user.uid;
+
+                            // Atualiza o ID no perfil
+                            if (userIdDisplay) {
+                                userIdDisplay.value = currentUserId;
+                            }
+
+                            // Carrega os dados privados do usuário
+                            await loadUserData(currentUserId);
+
+                            // Inicia o listener para posts da comunidade
+                            listenForCommunityPosts();
+
+                            // Esconde o loading
+                            loadingOverlay.classList.add('opacity-0', 'pointer-events-none');
+                        } else {
+                            // Ninguém logado, tenta logar anonimamente
+                            console.log('Nenhum usuário, tentando login anônimo...');
+                            loadingOverlay.classList.remove('opacity-0', 'pointer-events-none');
+
+                            try {
+                                // === ALTERAÇÃO PARA TESTE LOCAL ===
+                                // A variável __initial_auth_token não existe localmente,
+                                // então vamos direto para o signInAnonymously.
+                                if (typeof __initial_auth_token !== 'undefined') {
+                                    // Este bloco será usado no Canvas
+                                    await signInWithCustomToken(auth, __initial_auth_token);
+                                } else {
+                                    // Este bloco será usado localmente
+                                    await signInAnonymously(auth);
+                                }
+                                // === FIM DA ALTERAÇÃO ===
+                            } catch (error) {
+                                console.error('Erro ao fazer login anônimo:', error);
+                                loadingOverlay.innerHTML = "<p class='text-red-600 p-4 text-center'>Erro ao conectar. Por favor, atualize a página.</p>";
+                            }
+                        }
+                    });
+
+                } catch (error) {
+                    console.error('Erro ao inicializar Firebase:', error);
+                    loadingOverlay.innerHTML = "<p class='text-red-600 p-4 text-center'>Erro crítico ao inicializar o app.</p>";
+                }
+            }
+
+            // --- NOVO: CARREGAR DADOS DO USUÁRIO (Firestore) ---
+            async function loadUserData(userId) {
+                if (!db) return;
+
+                // Caminhos dos documentos
+                const configDocRef = doc(db, `artifacts/${appId}/users/${userId}/profile/config`);
+                const datesDocRef = doc(db, `artifacts/${appId}/users/${userId}/calendar/dates`);
+
+                try {
+                    // Carrega Configurações
+                    const configDoc = await getDoc(configDocRef);
+                    if (configDoc.exists()) {
+                        const data = configDoc.data();
+                        cicloConfig = {
+                            cycleLength: data.cycleLength || 28,
+                            periodLength: data.periodLength || 5
+                        };
+                        userNickname = data.nickname || 'Visitante';
+                    } else {
+                        // Novo usuário, salva os padrões
+                        await setDoc(configDocRef, { ...cicloConfig, nickname: userNickname });
+                    }
+
+                    // Carrega Datas do Calendário
+                    const datesDoc = await getDoc(datesDocRef);
+                    if (datesDoc.exists()) {
+                        // Converte o array salvo de volta para um Set
+                        selectedDates = new Set(datesDoc.data().dates || []);
+                    } else {
+                        // Novo usuário, salva o Set vazio (como array)
+                        await setDoc(datesDocRef, { dates: [] });
+                    }
+
+                    // Atualiza a UI com os dados carregados
+                    updateProfileUI();
+
+                } catch (error) {
+                    console.error("Erro ao carregar dados do usuário:", error);
+                }
+            }
+
+            // --- NOVO: Funções de salvar dados (Firestore) ---
+            async function saveProfileConfig() {
+                if (!currentUserId || !db) return;
+                const configDocRef = doc(db, `artifacts/${appId}/users/${currentUserId}/profile/config`);
+                try {
+                    await setDoc(configDocRef, {
+                        nickname: userNickname,
+                        cycleLength: cicloConfig.cycleLength,
+                        periodLength: cicloConfig.periodLength
+                    }, { merge: true }); // Merge para não sobrescrever campos
+                } catch (error) {
+                    console.error("Erro ao salvar config do perfil:", error);
+                }
+            }
+
+            async function saveCalendarDates() {
+                if (!currentUserId || !db) return;
+                const datesDocRef = doc(db, `artifacts/${appId}/users/${currentUserId}/calendar/dates`);
+                try {
+                    // Converte o Set para Array para salvar no Firestore
+                    await setDoc(datesDocRef, { dates: Array.from(selectedDates) });
+                } catch (error) {
+                    console.error("Erro ao salvar datas do calendário:", error);
+                }
+            }
 
             // --- LÓGICA DE PERFIL (page-perfil) ---
-            const nicknameInput = document.getElementById('nickname');
-            const saveNicknameBtn = document.getElementById('save-nickname-btn');
-            const nicknameFeedback = document.getElementById('save-nickname-feedback');
+            function updateProfileUI() {
+                if (nicknameInput) nicknameInput.value = userNickname;
+                if (cycleLengthInput) cycleLengthInput.value = cicloConfig.cycleLength;
+                if (periodLengthInput) periodLengthInput.value = cicloConfig.periodLength;
+                // Atualiza o feedback da média
+                updateAverageCycleFeedback();
+            }
 
-            const cycleLengthInput = document.getElementById('cycle-length');
-            const periodLengthInput = document.getElementById('period-length');
-            const saveConfigBtn = document.getElementById('save-config-btn');
-            const configFeedback = document.getElementById('save-config-feedback');
-            const avgCycleFeedback = document.getElementById('avg-cycle-feedback');
-
-            const exportBtn = document.getElementById('export-data-btn');
-            const importInput = document.getElementById('import-file-input');
-            const importFeedback = document.getElementById('import-feedback');
-
-            // Popular campos ao carregar
-            if (nicknameInput) nicknameInput.value = userNickname;
-            if (cycleLengthInput) cycleLengthInput.value = cicloConfig.cycleLength;
-            if (periodLengthInput) periodLengthInput.value = cicloConfig.periodLength;
-
-            // Salvar Nickname
             if (saveNicknameBtn) {
-                saveNicknameBtn.addEventListener('click', () => {
+                saveNicknameBtn.addEventListener('click', async () => {
                     userNickname = nicknameInput.value.trim() || 'Visitante';
-                    localStorage.setItem(STORAGE_KEY_NICKNAME, userNickname);
                     nicknameInput.value = userNickname;
+                    await saveProfileConfig(); // Salva no Firestore
                     showFeedback(nicknameFeedback, 'Salvo!');
                 });
             }
 
-            // Salvar Config do Ciclo
             if (saveConfigBtn) {
-                saveConfigBtn.addEventListener('click', () => {
+                saveConfigBtn.addEventListener('click', async () => {
                     cicloConfig.cycleLength = parseInt(cycleLengthInput.value) || 28;
                     cicloConfig.periodLength = parseInt(periodLengthInput.value) || 5;
-                    localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(cicloConfig));
+                    await saveProfileConfig(); // Salva no Firestore
                     showFeedback(configFeedback, 'Salvo!');
 
-                    // Re-renderizar o calendário com novas previsões
-                    // Usamos a função global (definida mais abaixo)
+                    // Re-renderizar o calendário e feedback
                     if (window.renderCalendar) {
                         let currentDate = new Date();
                         window.renderCalendar(currentDate.getFullYear(), currentDate.getMonth());
                     }
-                    // Atualiza o feedback da média
-                    if (avgCycleFeedback) {
-                        const calculatedAvg = getAverageCycleLength(); // Pega a média real
-                        if (calculatedAvg.average > 0) {
-                            avgCycleFeedback.textContent = `A média calculada dos seus últimos ${calculatedAvg.count} ciclos é de ${calculatedAvg.average} dias. O app usará esse valor.`;
-                        } else {
-                            avgCycleFeedback.textContent = `Seu valor salvo (${cicloConfig.cycleLength} dias) será usado até você ter mais ciclos registrados.`;
-                        }
-                    }
+                    updateAverageCycleFeedback();
                 });
             }
-
-            // Lógica de Exportação
-            if (exportBtn) {
-                exportBtn.addEventListener('click', () => {
-                    try {
-                        const backupData = {
-                            nickname: localStorage.getItem(STORAGE_KEY_NICKNAME) || 'Visitante',
-                            config: localStorage.getItem(STORAGE_KEY_CONFIG) || JSON.stringify({ cycleLength: 28, periodLength: 5 }),
-                            dates: localStorage.getItem(STORAGE_KEY_DATES) || '[]',
-                            posts: localStorage.getItem(STORAGE_KEY_POSTS) || JSON.stringify(fallbackPosts)
-                        };
-
-                        const jsonString = JSON.stringify(backupData, null, 2);
-                        const blob = new Blob([jsonString], { type: 'application/json' });
-                        const url = URL.createObjectURL(blob);
-
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = `meu_ciclo_backup_${new Date().toISOString().split('T')[0]}.json`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(url);
-
-                        showFeedback(importFeedback, 'Dados exportados com sucesso!');
-                        importFeedback.classList.remove('text-red-600');
-                        importFeedback.classList.add('text-green-600');
-
-                    } catch (error) {
-                        console.error('Erro ao exportar dados:', error);
-                        showFeedback(importFeedback, 'Erro ao exportar dados.');
-                        importFeedback.classList.remove('text-green-600');
-                        importFeedback.classList.add('text-red-600');
-                    }
-                });
-            }
-
-            // Lógica de Importação
-            if (importInput) {
-                importInput.addEventListener('change', (event) => {
-                    const file = event.target.files[0];
-                    if (!file) {
-                        return;
-                    }
-
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        try {
-                            const text = e.target.result;
-                            const backupData = JSON.parse(text);
-
-                            if (backupData.nickname && backupData.config && backupData.dates && backupData.posts) {
-                                localStorage.setItem(STORAGE_KEY_NICKNAME, backupData.nickname);
-                                localStorage.setItem(STORAGE_KEY_CONFIG, backupData.config);
-                                localStorage.setItem(STORAGE_KEY_DATES, backupData.dates);
-                                localStorage.setItem(STORAGE_KEY_POSTS, backupData.posts);
-
-                                showFeedback(importFeedback, 'Sucesso! Recarregando app...');
-                                importFeedback.classList.remove('text-red-600');
-                                importFeedback.classList.add('text-green-600');
-
-                                setTimeout(() => {
-                                    window.location.reload();
-                                }, 2000);
-
-                            } else {
-                                throw new Error('Arquivo de backup inválido ou corrompido.');
-                            }
-                        } catch (error) {
-                            console.error('Erro ao importar dados:', error);
-                            showFeedback(importFeedback, `Erro: ${error.message}`);
-                            importFeedback.classList.remove('text-green-600');
-                            importFeedback.classList.add('text-red-600');
-                        } finally {
-                            event.target.value = null;
-                        }
-                    };
-                    reader.readAsText(file);
-                });
-            }
-
 
             // --- LÓGICA DA COMUNIDADE (page-comunidade) ---
-            const postTextarea = document.getElementById('post-textarea');
-            const postTitleInput = document.getElementById('post-title-input'); // NOVO
-            const postBtn = document.getElementById('post-btn');
-            const feedWrapper = document.getElementById('community-feed-wrapper');
-            const postDetailContent = document.getElementById('post-detail-content');
-            const postRepliesList = document.getElementById('post-replies-list');
-            const replyTextarea = document.getElementById('reply-textarea');
-            const replyBtn = document.getElementById('reply-btn');
 
+            // Formata timestamp do Firebase (se existir)
+            function formatFirebaseTimestamp(fbTimestamp) {
+                if (!fbTimestamp) return 'um tempo atrás';
+                const date = fbTimestamp.toDate(); // Converte para Date
+                const now = new Date();
+                const diffMs = now - date;
+                const diffSec = Math.round(diffMs / 1000);
+                const diffMin = Math.round(diffSec / 60);
+                const diffHr = Math.round(diffMin / 60);
+                const diffDay = Math.round(diffHr / 24);
+
+                if (diffSec < 60) return `Agora mesmo`;
+                if (diffMin < 60) return `${diffMin} min atrás`;
+                if (diffHr < 24) return `${diffHr}h atrás`;
+                return `${diffDay}d atrás`;
+            }
 
             function createPostHTML(post, isDetailView = false) {
                 const safeTitle = escapeHTML(post.title);
                 const safeBody = escapeHTML(post.body).replace(/\n/g, '<br>');
-                const replyCount = post.replies ? post.replies.length : 0;
+                const replyCount = post.replyCount || 0;
 
-                // Não adiciona classes de clique se for a view de detalhe
                 const cursorClass = isDetailView ? '' : 'cursor-pointer hover:bg-gray-50 post-item-trigger';
+                // ATENÇÃO: post.id agora é o ID do Documento do Firestore
                 const postIdAttr = isDetailView ? '' : `data-post-id="${post.id}"`;
 
                 return `
@@ -1144,7 +1215,7 @@
                         <i data-lucide="user-circle-2" class="w-10 h-10 ${escapeHTML(post.avatarColor) || 'text-gray-500'}"></i>
                         <div>
                             <h3 class="font-bold text-gray-800">${escapeHTML(post.author)}</h3>
-                            <p class="text-xs text-gray-500">Postado ${escapeHTML(post.timestamp)}</p>
+                            <p class="text-xs text-gray-500">Postado ${formatFirebaseTimestamp(post.timestamp)}</p>
                         </div>
                     </div>
                     <h4 class="text-xl font-semibold text-violet-700 mb-2">${safeTitle}</h4>
@@ -1165,12 +1236,36 @@
                         <i data-lucide="user-circle" class="w-8 h-8 text-gray-500"></i>
                         <div>
                             <h4 class="font-bold text-gray-800">${escapeHTML(reply.author)}</h4>
-                            <p class="text-xs text-gray-500">Respondido ${escapeHTML(reply.timestamp)}</p>
+                            <p class="text-xs text-gray-500">Respondido ${formatFirebaseTimestamp(reply.timestamp)}</p>
                         </div>
                     </div>
                     <p class="text-gray-700 break-words">${safeBody}</p>
                 </div>
                 `;
+            }
+
+            // NOVO: Listener de posts do Firestore
+            function listenForCommunityPosts() {
+                if (!db) return;
+                // Desconecta listener antigo, se existir
+                if (unsubscribeFromPosts) {
+                    unsubscribeFromPosts();
+                }
+
+                const postsColRef = collection(db, `artifacts/${appId}/public/data/community_posts`);
+                // Ordena pelos mais recentes
+                const q = query(postsColRef, orderBy("timestamp", "desc"));
+
+                unsubscribeFromPosts = onSnapshot(q, (querySnapshot) => {
+                    communityPosts = []; // Limpa o cache local
+                    querySnapshot.forEach((doc) => {
+                        communityPosts.push({ id: doc.id, ...doc.data() });
+                    });
+                    // Re-renderiza o feed
+                    renderCommunityPosts();
+                }, (error) => {
+                    console.error("Erro ao ouvir posts da comunidade:", error);
+                });
             }
 
             function renderCommunityPosts() {
@@ -1197,50 +1292,94 @@
                 }
             }
 
-            // Postar
+            // Postar (agora no Firestore)
             if (postBtn) {
-                postBtn.addEventListener('click', () => {
-                    const title = postTitleInput.value.trim(); // NOVO
-                    const text = postTextarea.value.trim();
-                    if (text && title) { // ATUALIZADO: agora checa se ambos (título e texto) existem
-                        const newPost = {
-                            id: Date.now(),
-                            author: userNickname, // Usa o nickname salvo
-                            avatarColor: 'text-violet-500', // Cor para novos posts
-                            timestamp: 'Agora mesmo',
-                            title: title, // ATUALIZADO: usa o valor do input de título
-                            body: text, // ATUALIZADO: usa o valor do textarea
-                            replies: [] // Inicia com array vazio
-                        };
+                postBtn.addEventListener('click', async () => {
+                    if (!currentUserId || !db) return;
 
-                        communityPosts.unshift(newPost); // Adiciona no início
-                        localStorage.setItem(STORAGE_KEY_POSTS, JSON.stringify(communityPosts));
-                        renderCommunityPosts();
-                        postTextarea.value = '';
-                        postTitleInput.value = ''; // NOVO: limpa o campo de título
+                    const title = postTitleInput.value.trim();
+                    const text = postTextarea.value.trim();
+                    if (text && title) {
+                        const postsColRef = collection(db, `artifacts/${appId}/public/data/community_posts`);
+                        try {
+                            // Desativa o botão para evitar cliques duplos
+                            postBtn.disabled = true;
+                            postBtn.textContent = "Postando...";
+
+                            await addDoc(postsColRef, {
+                                author: userNickname,
+                                avatarColor: 'text-violet-500', // Padrão para posts de usuário
+                                title: title,
+                                body: text,
+                                timestamp: serverTimestamp(), // Usa o timestamp do servidor
+                                userId: currentUserId, // Salva o ID do autor
+                                replyCount: 0 // Inicia contagem de respostas
+                            });
+
+                            // Limpa os campos
+                            postTextarea.value = '';
+                            postTitleInput.value = '';
+                            // O listener onSnapshot vai cuidar de re-renderizar
+
+                        } catch (error) {
+                            console.error("Erro ao criar post:", error);
+                        } finally {
+                            // Re-ativa o botão
+                            postBtn.disabled = false;
+                            postBtn.innerHTML = '<i data-lucide="send" class="w-5 h-5 mr-2"></i> Postar';
+                            lucide.createIcons();
+                        }
                     }
                 });
             }
 
-            // NOVA: Renderiza a página de detalhe do post
-            function renderPostDetail(post) {
-                if (!post || !postDetailContent || !postRepliesList || !replyBtn) return;
+            // Renderiza a página de detalhe do post (lendo do Firestore)
+            async function renderPostDetail(postId) {
+                if (!db || !postDetailContent || !postRepliesList || !replyBtn) return;
 
-                // 1. Renderiza o post principal
-                postDetailContent.innerHTML = createPostHTML(post, true); // true = isDetailView
+                // Salva o ID do post atual
+                currentPostIdForReplies = postId;
 
-                // 2. Renderiza as respostas
-                postRepliesList.innerHTML = '';
-                if (post.replies && post.replies.length > 0) {
-                    post.replies.forEach(reply => {
-                        postRepliesList.insertAdjacentHTML('beforeend', createReplyHTML(reply));
-                    });
-                } else {
-                    postRepliesList.innerHTML = '<p class="text-gray-500 text-center italic">Nenhuma resposta ainda.</p>';
+                // 1. Renderiza o post principal (busca única)
+                const postDocRef = doc(db, `artifacts/${appId}/public/data/community_posts`, postId);
+                try {
+                    const postDoc = await getDoc(postDocRef);
+                    if (postDoc.exists()) {
+                        const postData = { id: postDoc.id, ...postDoc.data() };
+                        postDetailContent.innerHTML = createPostHTML(postData, true); // true = isDetailView
+                    } else {
+                        postDetailContent.innerHTML = "<p>Post não encontrado.</p>";
+                    }
+                } catch (error) {
+                    console.error("Erro ao buscar post:", error);
+                    postDetailContent.innerHTML = "<p>Erro ao carregar post.</p>";
                 }
 
+
+                // 2. Inicia o listener para as respostas
+                // Desconecta listener antigo
+                if (unsubscribeFromReplies) {
+                    unsubscribeFromReplies();
+                }
+                const repliesColRef = collection(db, `artifacts/${appId}/public/data/community_posts/${postId}/replies`);
+                const q = query(repliesColRef, orderBy("timestamp", "asc")); // Mais antigas primeiro
+
+                unsubscribeFromReplies = onSnapshot(q, (querySnapshot) => {
+                    postRepliesList.innerHTML = ''; // Limpa respostas antigas
+                    if (querySnapshot.empty) {
+                        postRepliesList.innerHTML = '<p class="text-gray-500 text-center italic">Nenhuma resposta ainda.</p>';
+                    } else {
+                        querySnapshot.forEach((doc) => {
+                            postRepliesList.insertAdjacentHTML('beforeend', createReplyHTML(doc.data()));
+                        });
+                    }
+                    lucide.createIcons();
+                }, (error) => {
+                    console.error("Erro ao ouvir respostas:", error);
+                });
+
                 // 3. Atribui o ID do post ao botão de responder
-                replyBtn.dataset.currentPostId = post.id;
+                replyBtn.dataset.currentPostId = postId;
 
                 // 4. Limpa o textarea
                 if (replyTextarea) replyTextarea.value = '';
@@ -1251,42 +1390,59 @@
                 }
             }
 
-            // NOVA: Adiciona listener de clique para responder
+            // Adiciona listener de clique para responder (no Firestore)
             if (replyBtn) {
-                replyBtn.addEventListener('click', () => {
+                replyBtn.addEventListener('click', async () => {
                     const text = replyTextarea.value.trim();
                     const postId = replyBtn.dataset.currentPostId;
 
-                    if (text && postId) {
-                        const newReply = {
-                            id: Date.now(),
-                            author: userNickname,
-                            timestamp: 'Agora mesmo',
-                            body: text
-                        };
+                    if (text && postId && currentUserId && db) {
+                        // Caminho para a subcoleção de respostas
+                        const repliesColRef = collection(db, `artifacts/${appId}/public/data/community_posts/${postId}/replies`);
+                        // Caminho para o documento do post principal
+                        const postDocRef = doc(db, `artifacts/${appId}/public/data/community_posts`, postId);
 
-                        // Encontra o post e adiciona a resposta
-                        const post = communityPosts.find(p => p.id == postId);
-                        if (post) {
-                            post.replies.unshift(newReply); // Adiciona no início
-                            localStorage.setItem(STORAGE_KEY_POSTS, JSON.stringify(communityPosts));
+                        try {
+                            replyBtn.disabled = true;
+                            replyBtn.textContent = "Respondendo...";
 
-                            // Re-renderiza a página de detalhe
-                            renderPostDetail(post);
+                            // 1. Adiciona a nova resposta
+                            await addDoc(repliesColRef, {
+                                author: userNickname,
+                                body: text,
+                                timestamp: serverTimestamp(),
+                                userId: currentUserId
+                            });
+
+                            // 2. Atualiza (incrementa) a contagem no post principal
+                            await updateDoc(postDocRef, {
+                                replyCount: increment(1)
+                            });
+
+                            // Limpa o textarea
+                            replyTextarea.value = '';
+                            // O listener onSnapshot vai cuidar de mostrar a nova resposta
+
+                        } catch (error) {
+                            console.error("Erro ao postar resposta:", error);
+                        } finally {
+                            replyBtn.disabled = false;
+                            replyBtn.innerHTML = '<i data-lucide="send" class="w-5 h-5 mr-2"></i> Responder';
+                            lucide.createIcons();
                         }
                     }
                 });
             }
 
-            // NOVA: Listener de clique no feed (Event Delegation)
+            // Listener de clique no feed (Event Delegation)
             if (feedWrapper) {
                 feedWrapper.addEventListener('click', (e) => {
                     const postTrigger = e.target.closest('.post-item-trigger');
                     if (postTrigger) {
                         const postId = postTrigger.dataset.postId;
-                        const post = communityPosts.find(p => p.id == postId);
-                        if (post) {
-                            renderPostDetail(post);
+                        if (postId) {
+                            // Chama a função que lê do Firestore
+                            renderPostDetail(postId);
                             showPage('page-post-detail');
                         }
                     }
@@ -1295,10 +1451,6 @@
 
 
             // --- LÓGICA DO CALENDÁRIO (page-calendario) ---
-            const monthYearEl = document.getElementById('month-year');
-            const gridEl = document.getElementById('calendar-grid');
-            const prevBtn = document.getElementById('prev-month');
-            const nextBtn = document.getElementById('next-month');
             let currentDateForCalendar = new Date();
 
             if (monthYearEl && gridEl && prevBtn && nextBtn) {
@@ -1314,24 +1466,17 @@
                     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
                 }
 
-                // NOVA FUNÇÃO: Acha os inícios dos ciclos
                 function getCycleStartDates() {
                     if (selectedDates.size === 0) return [];
-
                     const sortedDates = Array.from(selectedDates).sort((a, b) => new Date(a) - new Date(b));
-
                     let cyclesStartDates = [];
                     if (sortedDates.length > 0) {
                         cyclesStartDates.push(new Date(sortedDates[0]));
-
                         for (let i = 1; i < sortedDates.length; i++) {
                             let prevDate = new Date(sortedDates[i - 1]);
                             let currDate = new Date(sortedDates[i]);
                             let diffTime = currDate.getTime() - prevDate.getTime();
                             let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-                            // Se a diferença for maior que 15 dias, consideramos um novo ciclo
-                            // (Ajuste este valor se necessário)
                             if (diffDays > 15) {
                                 cyclesStartDates.push(currDate);
                             }
@@ -1340,14 +1485,11 @@
                     return cyclesStartDates;
                 }
 
-                // NOVA FUNÇÃO: Calcula a média de duração
                 function getAverageCycleLength() {
                     const cyclesStartDates = getCycleStartDates();
                     if (cyclesStartDates.length < 2) {
-                        // Não há ciclos completos suficientes para calcular
                         return { average: 0, count: 0 };
                     }
-
                     let cycleLengths = [];
                     for (let i = 1; i < cyclesStartDates.length; i++) {
                         let prevCycle = cyclesStartDates[i - 1];
@@ -1356,48 +1498,42 @@
                         let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
                         cycleLengths.push(diffDays);
                     }
-
                     if (cycleLengths.length === 0) {
                         return { average: 0, count: 0 };
                     }
-
-                    // Pega os últimos 3 ciclos
                     const lastThreeLengths = cycleLengths.slice(-3);
                     const sum = lastThreeLengths.reduce((a, b) => a + b, 0);
                     const average = Math.round(sum / lastThreeLengths.length);
-
                     return { average: average, count: lastThreeLengths.length };
                 }
 
+                // REMOVIDO: A função foi movida para o escopo global
+                /*
+                function updateAverageCycleFeedback() {
+                    if (!avgCycleFeedback) return;
+                    const calculatedAvg = getAverageCycleLength();
+                    if (calculatedAvg.average > 0) {
+                        avgCycleFeedback.textContent = `A média calculada dos seus últimos ${calculatedAvg.count} ciclos é de ${calculatedAvg.average} dias. O app usará esse valor.`;
+                    } else {
+                        avgCycleFeedback.textContent = `Seu valor salvo (${cicloConfig.cycleLength} dias) será usado até você ter mais ciclos registrados.`;
+                    }
+                }
+                */
 
-                // ATUALIZADA: Função para calcular previsões
                 function getPredictions() {
                     const cyclesStartDates = getCycleStartDates();
                     if (cyclesStartDates.length === 0) {
                         return { nextPeriod: [], fertileWindow: [] };
                     }
-
-                    // Pega o início do último ciclo registrado
                     const lastCycleStartDate = cyclesStartDates[cyclesStartDates.length - 1];
-
-                    // Pega a config salva (duração da menstruação)
                     const { periodLength } = cicloConfig;
-
-                    // Pega a média calculada ou o valor salvo
                     const calculatedAvg = getAverageCycleLength();
                     let effectiveCycleLength;
 
                     if (calculatedAvg.average > 0) {
                         effectiveCycleLength = calculatedAvg.average;
-                        // Atualiza o feedback no perfil, se existir
-                        if (avgCycleFeedback) {
-                            avgCycleFeedback.textContent = `A média calculada dos seus últimos ${calculatedAvg.count} ciclos é de ${effectiveCycleLength} dias. O app usará esse valor.`;
-                        }
                     } else {
                         effectiveCycleLength = cicloConfig.cycleLength; // Fallback
-                        if (avgCycleFeedback) {
-                            avgCycleFeedback.textContent = `Seu valor salvo (${effectiveCycleLength} dias) será usado até você ter mais ciclos registrados.`;
-                        }
                     }
 
                     // 1. Previsão da Próxima Menstruação
@@ -1410,72 +1546,58 @@
                         predictions.nextPeriod.push(formatDate(addDays(nextPeriodStartDate, i)));
                     }
 
-                    // 2. NOVA: Previsão do Período Fértil
-                    // Estimativa: Ovulação ocorre ~14 dias ANTES da próxima menstruação
+                    // 2. Previsão do Período Fértil
                     const estimatedOvulationDate = addDays(nextPeriodStartDate, -14);
-                    // Janela fértil: 5 dias antes da ovulação + dia da ovulação
                     for (let i = -5; i <= 0; i++) {
                         predictions.fertileWindow.push(formatDate(addDays(estimatedOvulationDate, i)));
                     }
-
                     return predictions;
                 }
 
                 // Tornar a função de renderização global
                 window.renderCalendar = function (year, month) {
                     if (!gridEl || !monthYearEl) return;
-
                     gridEl.innerHTML = '';
                     monthYearEl.textContent = `${monthNames[month]} ${year}`;
-
                     const predictions = getPredictions();
-
                     let firstDayOfWeek = new Date(year, month, 1).getDay();
                     let totalDaysInMonth = new Date(year, month + 1, 0).getDate();
-
                     for (let i = 0; i < firstDayOfWeek; i++) {
                         gridEl.appendChild(document.createElement('div'));
                     }
-
                     let today = new Date();
                     for (let day = 1; day <= totalDaysInMonth; day++) {
                         const dayEl = document.createElement('div');
                         const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-
                         dayEl.textContent = day;
                         dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-violet-100 transition-colors duration-150';
-
                         const isToday = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
                         if (isToday) {
                             dayEl.classList.add('bg-violet-100', 'text-violet-700', 'font-bold');
                         }
-
-                        // Estiliza com base na seleção ou previsão
                         if (selectedDates.has(dateString)) {
-                            // Dia de menstruação (marcado)
                             dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-rose-300 text-rose-800 font-bold';
                         } else if (predictions.nextPeriod.includes(dateString)) {
-                            // Dia de previsão de menstruação
                             dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-rose-100 text-rose-500 border border-rose-200';
                             dayEl.style.backgroundImage = 'linear-gradient(135deg, rgba(255,255,255,0.5) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 75%, transparent 75%, transparent)';
                             dayEl.style.backgroundSize = '8px 8px';
                         } else if (predictions.fertileWindow.includes(dateString)) {
-                            // NOVO: Dia de previsão fértil
                             dayEl.className = 'h-10 w-10 flex items-center justify-center rounded-full cursor-pointer bg-emerald-100 text-emerald-700 border border-emerald-200';
                         }
 
-                        // Adiciona evento de clique
                         dayEl.addEventListener('click', () => {
                             if (selectedDates.has(dateString)) {
                                 selectedDates.delete(dateString);
                             } else {
                                 selectedDates.add(dateString);
                             }
-                            localStorage.setItem(STORAGE_KEY_DATES, JSON.stringify(Array.from(selectedDates)));
+                            // Salva no Firestore
+                            saveCalendarDates();
                             // Re-renderiza o calendário para atualizar cores E previsões
                             window.renderCalendar(year, month);
+                            // Atualiza o feedback de média no perfil
+                            updateAverageCycleFeedback();
                         });
-
                         gridEl.appendChild(dayEl);
                     }
                 }
@@ -1497,30 +1619,25 @@
             const subpageTriggers = document.querySelectorAll('.subpage-trigger');
             const pages = document.querySelectorAll('.page-content');
 
-            // NOVA: Função reutilizável para mostrar páginas
             function showPage(targetPageId) {
-                // Esconde todas as páginas
-                pages.forEach(page => page.classList.add('hidden'));
+                // NOVO: Desconecta o listener de respostas se sairmos da página de detalhes
+                if (targetPageId !== 'page-post-detail' && unsubscribeFromReplies) {
+                    console.log("Saindo do post, desconectando listener de respostas.");
+                    unsubscribeFromReplies();
+                    unsubscribeFromReplies = null;
+                    currentPostIdForReplies = null;
+                }
 
-                // Mostra a página alvo
+                pages.forEach(page => page.classList.add('hidden'));
                 const targetPage = document.getElementById(targetPageId);
                 if (targetPage) {
                     targetPage.classList.remove('hidden');
                 }
-
-                // Atualiza o estado visual APENAS dos botões de navegação principais
-                let isMainPage = false;
                 navButtons.forEach(btn => {
                     const icon = btn.querySelector('.nav-icon');
                     const text = btn.querySelector('.nav-text');
                     const isTarget = btn.dataset.target === targetPageId;
-
-                    if (isTarget) isMainPage = true;
-
-                    // Atualiza A11y
                     btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
-
-                    // Atualiza estilos
                     btn.classList.toggle('text-violet-600', isTarget);
                     btn.classList.toggle('text-gray-400', !isTarget);
                     if (icon) {
@@ -1533,34 +1650,24 @@
                     }
                 });
 
-                // --- ATUALIZAÇÕES DINÂMICAS AO TROCAR DE ABA ---
-                if (targetPageId === 'page-comunidade') {
-                    renderCommunityPosts();
-                }
+                // ATUALIZAÇÕES DINÂMICAS AO TROCAR DE ABA
+                // (Os listeners do Firebase cuidam da comunidade)
                 if (targetPageId === 'page-calendario' && window.renderCalendar) {
                     currentDateForCalendar = new Date();
                     window.renderCalendar(currentDateForCalendar.getFullYear(), currentDateForCalendar.getMonth());
                 }
                 if (targetPageId === 'page-perfil') {
-                    if (nicknameInput) nicknameInput.value = userNickname;
-                    if (cycleLengthInput) cycleLengthInput.value = cicloConfig.cycleLength;
-                    if (periodLengthInput) periodLengthInput.value = cicloConfig.periodLength;
-                    // Dispara o cálculo da média ao carregar o perfil
-                    getPredictions();
+                    updateProfileUI();
                 }
-
-                // Rola a página para o topo
                 window.scrollTo(0, 0);
             }
 
-            // Listener para Navegação Principal
             navButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     showPage(button.dataset.target);
                 });
             });
 
-            // Listener para Sub-páginas (Termos, Privacidade, etc.)
             subpageTriggers.forEach(button => {
                 button.addEventListener('click', () => {
                     showPage(button.dataset.target);
@@ -1574,17 +1681,10 @@
                 toggle.addEventListener('click', () => {
                     const content = document.getElementById(toggle.getAttribute('aria-controls'));
                     const icon = toggle.querySelector('.toggle-icon');
-
                     if (content) {
                         const isHidden = content.classList.toggle('hidden');
-
-                        // Atualiza A11y
                         toggle.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
-
-                        // Arredonda o cabeçalho quando fechado
                         toggle.classList.toggle('rounded-b-2xl', isHidden);
-
-                        // Atualiza ícone
                         icon.textContent = isHidden ? '＋' : '－';
                     }
                 });
@@ -1594,6 +1694,9 @@
             if (window.lucide) {
                 lucide.createIcons();
             }
+
+            // --- NOVO: INICIA A APLICAÇÃO FIREBASE ---
+            initializeFirebase();
         });
     </script>
 
